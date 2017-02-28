@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">sprint1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="advisor_s_computing_id_">Advisor\'s Computing ID:</string>
+    <string name="password_">PASSWORD:</string>
+    <string name="log_in">LOG IN</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="enter_student_s_id_">Enter Student\'s ID:</string>
+    <string name="enter_student_s_computing_id_">Enter Student\'s Computing ID:</string>
+    <string name="search">SEARCH</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="student_s_grade">Student\'s Grade</string>
+    <string name="student_s_courses">Student\'s Courses</string>
+    <string name="student_s_major">Student\'s Major</string>
+    <string name="show_info_here_">Show info here!</string>
+
+</resources>

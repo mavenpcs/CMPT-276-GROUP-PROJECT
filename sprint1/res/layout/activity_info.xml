@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+	<Button
+	    android:id="@+id/showgrade"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/student_s_grade"/>
+	<Button
+ 	    android:id="@+id/showcourse"
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:text="@string/student_s_courses"/>
+ 	<Button
+ 	    android:id="@+id/showmajor"
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:text="@string/student_s_major"/>
+ 	<TextView
+ 	    android:id="@+id/showinfo"
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="match_parent"
+ 	    android:text="@string/show_info_here_"/>
+</LinearLayout>
