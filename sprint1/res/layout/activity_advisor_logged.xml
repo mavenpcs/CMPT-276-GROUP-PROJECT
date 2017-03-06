@@ -4,16 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp" >
-
-    <Button
-        android:id="@+id/advisorlogin"
+ <Button
+        android:id="@+id/asearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/advisor" />
-    <Button
-        android:id="@+id/studentlogin"
+        android:text="@string/search" />
+  <Button
+        android:id="@+id/aschedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/student" />
+        android:text="@string/schedule" />
+   <Button
+        android:id="@+id/achat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chat" />
 
 </LinearLayout>

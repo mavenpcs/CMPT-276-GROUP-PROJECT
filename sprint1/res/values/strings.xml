@@ -10,7 +10,7 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="enter_student_s_id_">Enter Student\'s ID:</string>
     <string name="enter_student_s_computing_id_">Enter Student\'s Computing ID:</string>
-    <string name="search">SEARCH</string>
+    <string name="search">Search</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="student_s_grade">Student\'s Grade</string>
     <string name="student_s_courses">Student\'s Courses</string>
@@ -34,5 +34,17 @@
     <string name="title_activity_chat">Chat</string>
     <string name="student_and_advisor_are_able_to_chat_on_this_activity_">Student and advisor are able to chat on this activity.</string>
     <string name="chat">Chat</string>
+    <string name="title_activity_advisor_login">AdvisorLogin</string>
+    <string name="title_activity_student_login">StudentLogin</string>
+    <string name="advisor">Advisor</string>
+    <string name="student">Student</string>
+    <string name="title_activity_student_logged">StudentLogged</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="grade">Grade</string>
+    <string name="course">Course</string>
+    <string name="student_s_computing_id">Student\'s computing id</string>
+    <string name="title_activity_appointment">Appointment</string>
+    <string name="student_can_make_appointment_with_advisor_at_this_activity">Student can make appointment with advisor at this activity</string>
+    <string name="title_activity_advisor_logged">AdvisorLogged</string>
 
 </resources>

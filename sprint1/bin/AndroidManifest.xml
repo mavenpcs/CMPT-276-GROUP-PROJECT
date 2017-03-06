@@ -50,6 +50,26 @@
             android:name=".Chat"
             android:label="@string/title_activity_chat" >
         </activity>
+        <activity
+            android:name=".AdvisorLogin"
+            android:label="@string/title_activity_advisor_login" >
+        </activity>
+        <activity
+            android:name=".StudentLogin"
+            android:label="@string/title_activity_student_login" >
+        </activity>
+        <activity
+            android:name=".StudentLogged"
+            android:label="@string/title_activity_student_logged" >
+        </activity>
+        <activity
+            android:name=".Appointment"
+            android:label="@string/title_activity_appointment" >
+        </activity>
+        <activity
+            android:name=".AdvisorLogged"
+            android:label="@string/title_activity_advisor_logged" >
+        </activity>
     </application>
 
 </manifest>

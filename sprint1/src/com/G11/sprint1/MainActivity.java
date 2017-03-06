@@ -8,20 +8,33 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	Button log;
+	Button alog;
+	Button slog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		clickLog();
+		clickaLog();
+		clicksLog();
 	}
-	public void clickLog(){
-		log=(Button)findViewById(R.id.Login);
-		log.setOnClickListener(new View.OnClickListener() {
+	public void clickaLog(){
+		alog=(Button)findViewById(R.id.advisorlogin);
+		alog.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i =new Intent(MainActivity.this,SearchActivity.class);
+				Intent i =new Intent(MainActivity.this,AdvisorLogin.class);
+				startActivity(i);
+			}
+		});
+	}
+	public void clicksLog(){
+		slog=(Button)findViewById(R.id.studentlogin);
+		slog.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i =new Intent(MainActivity.this,StudentLogin.class);
 				startActivity(i);
 			}
 		});
