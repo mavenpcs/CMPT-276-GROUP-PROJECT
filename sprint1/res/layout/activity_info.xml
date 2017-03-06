@@ -19,9 +19,14 @@
  	    android:layout_width="match_parent"
  	    android:layout_height="wrap_content"
  	    android:text="@string/student_s_major"/>
- 	<TextView
- 	    android:id="@+id/showinfo"
+ 	<Button
+ 	    android:id="@+id/showschedule"
  	    android:layout_width="match_parent"
- 	    android:layout_height="match_parent"
- 	    android:text="@string/show_info_here_"/>
+ 	    android:layout_height="wrap_content"
+ 	    android:text="@string/schedule"/>
+ 	<Button
+ 	    android:id="@+id/showchat"
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:text="@string/chat"/>
 </LinearLayout>

@@ -16,5 +16,23 @@
     <string name="student_s_courses">Student\'s Courses</string>
     <string name="student_s_major">Student\'s Major</string>
     <string name="show_info_here_">Show info here!</string>
+    <string name="title_activity_grade">Grade</string>
+    <string name="title_activity_course">Course</string>
+    <string name="title_activity_major">Major</string>
+    <string name="show_major_here_">Show major here.</string>
+    <string name="change_major">Change Major</string>
+    <string name="courses">Courses</string>
+    <string name="show_courses_here_">Show courses here!</string>
+    <string name="add_course">Add Course</string>
+    <string name="swap_courses">Swap courses</string>
+    <string name="drop_course">Drop course</string>
+    <string name="show_student_s_grade_for_each_course_and_cgpa">Show student\'s grade for each course and CGPA</string>
+    <string name="schedule">Schedule</string>
+    <string name="title_activity_schedule">Schedule</string>
+    <string name="show_daily_schedule_here_">Show daily schedule here!</string>
+    <string name="edit_schedule">Edit Schedule</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="student_and_advisor_are_able_to_chat_on_this_activity_">Student and advisor are able to chat on this activity.</string>
+    <string name="chat">Chat</string>
 
 </resources>

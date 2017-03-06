@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+<TextView
+    android:id="@+id/major"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="25sp"
+    android:text="@string/student_s_major"/>
+<TextView
+    android:id="@+id/showmajor"
+    android:layout_width="match_parent"
+   	
+    android:layout_height="100dp"
+    
+    android:text="@string/show_major_here_"/>
+<Button
+    android:id="@+id/changemajor"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/change_major"/>
+
+
+
+</LinearLayout>

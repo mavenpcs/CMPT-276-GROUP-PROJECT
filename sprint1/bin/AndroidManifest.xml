@@ -30,6 +30,26 @@
             android:name=".InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
+        <activity
+            android:name=".Grade"
+            android:label="@string/title_activity_grade" >
+        </activity>
+        <activity
+            android:name=".Course"
+            android:label="@string/title_activity_course" >
+        </activity>
+        <activity
+            android:name=".Major"
+            android:label="@string/title_activity_major" >
+        </activity>
+        <activity
+            android:name=".Schedule"
+            android:label="@string/title_activity_schedule" >
+        </activity>
+        <activity
+            android:name=".Chat"
+            android:label="@string/title_activity_chat" >
+        </activity>
     </application>
 
 </manifest>
