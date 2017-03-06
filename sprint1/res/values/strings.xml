@@ -46,5 +46,6 @@
     <string name="title_activity_appointment">Appointment</string>
     <string name="student_can_make_appointment_with_advisor_at_this_activity">Student can make appointment with advisor at this activity</string>
     <string name="title_activity_advisor_logged">AdvisorLogged</string>
+    <string name="feedback">Feedback</string>
 
 </resources>

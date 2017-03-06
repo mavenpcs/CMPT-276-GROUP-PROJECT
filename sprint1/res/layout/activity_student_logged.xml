@@ -24,5 +24,10 @@
 	    android:id="@+id/clickcourse"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
-    	android:text="@string/course"/>
+    	android:text="@string/course"/>	
+   	<Button 
+	    android:id="@+id/feedback"
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/feedback"/>
 </LinearLayout>
