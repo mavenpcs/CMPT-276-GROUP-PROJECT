@@ -13,6 +13,7 @@ public class StudentLogged extends Activity {
 	Button chat;
 	Button course;
 	Button grade;
+	Button feedback;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,6 +22,7 @@ public class StudentLogged extends Activity {
 		gochat();
 		gocourse();
 		gograde();
+		goFeedback();
 	}
 	public void goapp(){
 		appointment=(Button)findViewById(R.id.clickbookappointment);
@@ -62,6 +64,19 @@ public class StudentLogged extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i =new Intent(StudentLogged.this,Grade.class);
+				startActivity(i);
+			}
+		});
+	}
+
+
+	public void goFeedback(){
+		feedback=(Button)findViewById(R.id.clickfeedback);
+		feedback.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent i =new Intent(StudentLogged.this,Feedback.class);
 				startActivity(i);
 			}
 		});
