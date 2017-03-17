@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 //test
+//test2
 public class MainActivity extends Activity {
 	Button alog;
 	Button slog;
