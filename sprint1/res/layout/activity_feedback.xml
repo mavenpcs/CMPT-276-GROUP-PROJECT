@@ -1,17 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:text="TextView"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_weight="0.45"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar2"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/button"
+        android:layout_alignParentRight="true" />
 
     <Button
         android:text="Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
-</LinearLayout>
+        android:id="@+id/button"
+        android:layout_marginBottom="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_alignBottom="@+id/ratingBar2"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="76dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/ratingBar"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/ratingBar2"
+        android:layout_alignBottom="@+id/ratingBar" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ratingBar2"
+        android:layout_alignLeft="@+id/textView2"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/button"
+        android:layout_toLeftOf="@+id/ratingBar2" />
+</RelativeLayout>
