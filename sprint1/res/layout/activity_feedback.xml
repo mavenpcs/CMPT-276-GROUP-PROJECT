@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/editText_feedback"
         android:layout_weight="0.45"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
@@ -17,46 +17,47 @@
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar2"
+        android:id="@+id/ratingBar_prof"
         android:layout_marginBottom="18dp"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/button_sendfeedback"
         android:layout_alignParentRight="true" />
 
     <Button
-        android:text="Button"
+        android:text="@string/send_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/button_sendfeedback"
         android:layout_marginBottom="17dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_alignBottom="@+id/ratingBar2"
+        android:id="@+id/ratingBar_advisor"
+        android:layout_alignBottom="@+id/ratingBar_prof"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="76dp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/Professor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="21dp"
         android:id="@+id/textView2"
-        android:layout_alignTop="@+id/ratingBar"
+        android:layout_alignTop="@+id/ratingBar_advisor"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/ratingBar2"
-        android:layout_alignBottom="@+id/ratingBar" />
+        android:layout_toLeftOf="@+id/ratingBar_prof"
+        android:layout_alignBottom="@+id/ratingBar_advisor" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/advisor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/ratingBar2"
+        android:layout_alignTop="@+id/ratingBar_prof"
         android:layout_alignLeft="@+id/textView2"
         android:id="@+id/textView3"
-        android:layout_above="@+id/button"
-        android:layout_toLeftOf="@+id/ratingBar2" />
+        android:layout_above="@+id/button_sendfeedback"
+        android:layout_toLeftOf="@+id/ratingBar_prof" />
 </RelativeLayout>
