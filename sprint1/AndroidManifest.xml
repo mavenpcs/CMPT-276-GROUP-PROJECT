@@ -73,6 +73,9 @@
         <activity
             android:name=".Feedback"
             android:label="Feedback" />
+        <activity
+            android:name=".SeeFeedback"
+            android:label="seefeedback" />
     </application>
 
 </manifest>
