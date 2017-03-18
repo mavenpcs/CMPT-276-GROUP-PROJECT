@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,22 +7,46 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="296dp"
-        android:id="@+id/textView_see_feedback" />
+        android:id="@+id/textView_see_feedback"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar_advisor_feedback"
+        android:isIndicator="true"
+        android:layout_above="@+id/textView_see_feedback"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="48dp" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar_prof_feedback"
         android:isIndicator="true"
-    />
+        android:layout_above="@+id/ratingBar_advisor_feedback"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="22dp" />
 
-    <RatingBar
+    <TextView
+        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar_advisor_feedback"
-        android:isIndicator="true"/>
+        android:id="@+id/textView4"
+        android:layout_alignBottom="@+id/ratingBar_prof_feedback"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/ratingBar_prof_feedback"
+        android:layout_toStartOf="@+id/ratingBar_prof_feedback" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ratingBar_advisor_feedback"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView5"
+        android:layout_alignBottom="@+id/ratingBar_advisor_feedback"
+        android:layout_toStartOf="@+id/ratingBar_advisor_feedback" />
+
+</RelativeLayout>
