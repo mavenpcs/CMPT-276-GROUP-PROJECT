@@ -6,7 +6,11 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
-
+//test
+//123
+//kjh;kjh
+//kjh
+//test2
 public class MainActivity extends Activity {
 	Button alog;
 	Button slog;

@@ -46,6 +46,7 @@
     <string name="title_activity_appointment">Appointment</string>
     <string name="student_can_make_appointment_with_advisor_at_this_activity">Student can make appointment with advisor at this activity</string>
     <string name="title_activity_advisor_logged">AdvisorLogged</string>
+    <string name="send_feedback">Send Feedback</string>
     <string name="feedback">Feedback</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
@@ -56,4 +57,22 @@
     <string name="title_activity_signup">Signup</string>
     <string name="sign_up">Sign Up</string>
 
+    <string name="Professor">Professor</string>
+    <string name="feedback_received">Feedback Received!</string>
+    <string name="see_feedback">See Feedback</string>
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+    <string-array name="time">
+        <item>9:00-10:00</item>
+        <item>10:00-11:00</item>
+        <item>11:00-12:00</item>
+        <item>13:00-14:00</item>
+        <item>14:00-15:00</item>
+        <item>15:00-16:00</item>
+    </string-array>
 </resources>

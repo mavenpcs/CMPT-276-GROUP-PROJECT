@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="@string/chat" />
 
+ <Button
+     android:text="@string/see_feedback"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/button_seefeedback" />
+
 </LinearLayout>

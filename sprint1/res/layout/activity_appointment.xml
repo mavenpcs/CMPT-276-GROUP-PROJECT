@@ -7,10 +7,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.G11.sprint1.Appointment" >
-
-    <TextView
-        android:layout_width="wrap_content"
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/student_can_make_appointment_with_advisor_at_this_activity" />
+        android:id="@+id/dayspinner"
+        />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timespinner"
+        android:layout_below="@+id/dayspinner"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/bookappointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/book_appointment"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>
