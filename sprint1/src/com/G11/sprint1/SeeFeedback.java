@@ -13,7 +13,7 @@ import android.widget.TextView;
 import static com.G11.sprint1.Feedback.prof_rating;
 
 /**
- * Created by faffas-tablet on 2017-03-17.
+ * Created by Ryan on 2017-03-17.
  */
 public class SeeFeedback extends Activity {
     @Override

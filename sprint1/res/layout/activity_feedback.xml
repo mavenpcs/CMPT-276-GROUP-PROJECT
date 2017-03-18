@@ -18,7 +18,8 @@
         android:id="@+id/editText_feedback"
         android:layout_weight="0.45"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:hint="@string/enter_feedback"/>
 
 
 
