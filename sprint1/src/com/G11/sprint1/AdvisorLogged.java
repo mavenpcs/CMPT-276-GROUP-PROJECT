@@ -12,6 +12,7 @@ public class AdvisorLogged extends Activity {
 	Button chat;
 	Button search;
 	Button schedule;
+	Button see_feedback;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class AdvisorLogged extends Activity {
 		gosearch();
 		gochat();
 		goschedule();
+		go_see_feedback();
 	}
 	public void gosearch(){
 		search=(Button)findViewById(R.id.asearch);
@@ -49,6 +51,17 @@ public class AdvisorLogged extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i =new Intent(AdvisorLogged.this,Schedule.class);
+				startActivity(i);
+			}
+		});
+	}
+
+	public void go_see_feedback(){
+		see_feedback=(Button)findViewById(R.id.button_seefeedback);
+		see_feedback.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(AdvisorLogged.this, SeeFeedback.class);
 				startActivity(i);
 			}
 		});

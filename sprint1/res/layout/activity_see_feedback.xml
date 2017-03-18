@@ -7,17 +7,20 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="296dp"
-        android:id="@+id/textView" />
+        android:id="@+id/textView_see_feedback" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar" />
+        android:id="@+id/ratingBar_prof_feedback"
+        android:isIndicator="true"
+    />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar2" />
+        android:id="@+id/ratingBar_advisor_feedback"
+        android:isIndicator="true"/>
 
     <ListView
         android:layout_width="match_parent"

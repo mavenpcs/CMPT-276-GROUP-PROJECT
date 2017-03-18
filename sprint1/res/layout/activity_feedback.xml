@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ListView android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +19,8 @@
         android:layout_weight="0.45"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
+
+
 
     <RatingBar
         android:layout_width="wrap_content"
