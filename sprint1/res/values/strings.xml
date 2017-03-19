@@ -78,4 +78,6 @@
 
     <string name="enter_feedback">Tell us what you think!</string>
     <string name="no_feedback">No Feedback Yet!</string>
+    <string name="enter">Enter</string>
+    <string name="enter_message">Enter message</string>
 </resources>
