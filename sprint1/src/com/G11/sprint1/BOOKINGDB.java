@@ -32,7 +32,7 @@ public class BOOKINGDB {
 	public static final String[] ALL_KEYS = new String[] {KEY_ROWID, KEY_FIRSTNAME, KEY_LASTNAME, KEY_DAY, KEY_TIME};
 	
 	
-	public static final String DATABASE_NAME = "MyDb";
+	public static final String DATABASE_NAME = "BOOKINGDB";
 	public static final String DATABASE_TABLE = "mainTable";
 
 	public static final int DATABASE_VERSION = 2;	
