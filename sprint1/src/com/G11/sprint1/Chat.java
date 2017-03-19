@@ -62,7 +62,6 @@ public class Chat extends Activity {
 						editor.putString("TextView",str);
 						editor.commit();
 
-
 						String extractedText = pref.getString("TextView","");
 						firTxt.setText(extractedText);
 

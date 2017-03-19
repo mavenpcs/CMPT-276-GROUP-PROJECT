@@ -10,11 +10,15 @@ public class DataHolder {
     private String mString;
     private float rating1;
     private float rating2;
+    private String studnetid;
+    private String computingid;
 
     private DataHolder(){
         mString = "";
         rating1 = 0;
         rating2 = 0;
+        studnetid="";
+        computingid="";
     }
 
 
@@ -35,7 +39,8 @@ public class DataHolder {
     public float getrating2(){
         return this.rating2;
     }
-
+    public String getstudnetid(){return this.studnetid;}
+    public String getcomputingid(){return this.computingid;}
 
     public void setString(String value){
         mString = value;
@@ -46,4 +51,6 @@ public class DataHolder {
     public void setrating2(float value){
         rating2 = value;
     }
+    public void setstudentid(String s){studnetid=s;}
+    public void setcomputingid(String s){computingid=s;}
 }

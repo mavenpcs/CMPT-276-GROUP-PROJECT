@@ -77,7 +77,40 @@
     </string-array>
 
     <string name="enter_feedback">Tell us what you think!</string>
-    <string name="no_feedback">No Feedback Yet!</string>
+    <string name="no_dfeedback">No Feedback Yet!</string>
+    <string name="firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="grade1">grade1</string>
+    <string name="course2">course2</string>
+    <string name="course1">course1</string>
+    <string name="grade2">grade2</string>
+    <string name="course3">course3</string>
+    <string name="grade3">grade3</string>
+    <string name="course4">course4</string>
+    <string name="grade4">grade4</string>
+    <string name="course5">course5</string>
+    <string name="grade5">grade5</string>
+    <string name="course6">course6</string>
+    <string name="grade6">grade6</string>
+    <string name="course7">course7</string>
+    <string name="grade7">grade7</string>
+    <string name="course8">course8</string>
+    <string name="grade8">grade8</string>
+    <string name="course9">course9</string>
+    <string name="grade9">grade9</string>
+    <string name="course10">course10</string>
+    <string name="grade10">grade10</string>
+    <string name="taking1">taking1</string>
+    <string name="taking2">taking2</string>
+    <string name="taking4">taking4</string>
+    <string name="studentid">studentid</string>
+    <string name="computingid">computingid</string>
+    <string name="taking3">taking3</string>
+    <string name="add">ADD</string>
+    <string name="add_student_info">Add Student Info</string>
+    <string name="major">major</string>
     <string name="enter">Enter</string>
     <string name="enter_message">Enter message</string>
+    <string name="no_feedback">No feedback</string>
+
 </resources>

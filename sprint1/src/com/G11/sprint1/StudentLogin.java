@@ -16,7 +16,7 @@ public class StudentLogin extends Activity {
 	String cids, pws;
 	Button log;
 	Button signUp;
-
+	EditText computingid;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,20 +25,23 @@ public class StudentLogin extends Activity {
 		cid= (EditText) findViewById(R.id.editCIDL);
 		pw= (EditText) findViewById(R.id.editPwL);
 		clickLog();
-        setupSignUpButton();
+		setupSignUpButton();
 	}
 
 
 
-    public void clickLog(){
+	public void clickLog(){
 		log=(Button)findViewById(R.id.sLogin);
 		log.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-                cids= cid.getText().toString().trim();
-                pws= pw.getText().toString().trim();
+				cids= cid.getText().toString().trim();
+				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
+					computingid=(EditText)findViewById(R.id.editCIDL);
+					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
+					DataHolder.getInstance().setstudentid("");
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
 					startActivity(i);
 				}
@@ -48,16 +51,16 @@ public class StudentLogin extends Activity {
 			}
 		});
 	}
-    public void setupSignUpButton() {
-        signUp= (Button) findViewById(R.id.sSignUp);
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(StudentLogin.this, Signup.class);
-                startActivity(i);
-            }
-        });
-    }
+	public void setupSignUpButton() {
+		signUp= (Button) findViewById(R.id.sSignUp);
+		signUp.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(StudentLogin.this, Signup.class);
+				startActivity(i);
+			}
+		});
+	}
 
 	@Override
 	protected void onDestroy() {

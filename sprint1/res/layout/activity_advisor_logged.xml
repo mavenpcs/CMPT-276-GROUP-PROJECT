@@ -5,25 +5,31 @@
     android:orientation="vertical"
     android:padding="10dp" >
  <Button
-        android:id="@+id/asearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search" />
-  <Button
-        android:id="@+id/aschedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/schedule" />
-   <Button
-        android:id="@+id/achat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/chat" />
+     android:id="@+id/asearch"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="@string/search" />
+ <Button
+     android:id="@+id/aschedule"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="@string/schedule" />
+ <Button
+     android:id="@+id/achat"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="@string/chat" />
 
  <Button
      android:text="@string/see_feedback"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:id="@+id/button_seefeedback" />
+
+ <Button
+     android:text="@string/add_student_info"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/add" />
 
 </LinearLayout>

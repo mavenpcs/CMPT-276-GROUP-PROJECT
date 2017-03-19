@@ -1,34 +1,57 @@
 package com.G11.sprint1;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.EditText;
 
 public class Major extends Activity {
-
+	TextView major;
+	String computingid;
+	String studentid;
+	String mj;
+	STUDENTINFO base;
+	Cursor cursor;
+	String lastname;
+	String firstname;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_major);
+		major = (TextView)findViewById(R.id.showmajor);
+		studentid=DataHolder.getInstance().getstudnetid();
+		computingid=DataHolder.getInstance().getcomputingid();
+		major.setText(getstudentmajor(computingid,studentid));
+
+	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		base.close();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.major, menu);
-		return true;
+	private void openDB(){
+		base=new STUDENTINFO(this);
+		base.open();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	private String getstudentmajor(String cmptid, String stdid) {
+		openDB();
+		cursor = base.getAllRows();
+		cursor.moveToFirst();
+		if (cursor.moveToFirst()) {
+			do {
+				if (cursor.getString(STUDENTINFO.COL_COMPUTINGID).equals(cmptid) || cursor.getString(STUDENTINFO.COL_STUDENTID).equals(stdid)) {
+					return cursor.getString(STUDENTINFO.COL_MAJOR);
+				}
+			} while (cursor.moveToNext());
 		}
-		return super.onOptionsItemSelected(item);
+		return "student info not found!";
 	}
+
 }
+
