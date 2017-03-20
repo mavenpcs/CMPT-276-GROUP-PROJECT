@@ -71,6 +71,10 @@
             android:label="@string/title_activity_advisor_logged" >
         </activity>
         <activity
+            android:name=".AdvisorEditInfo"
+            android:label="@string/avei" >
+        </activity>
+        <activity
             android:name=".S_Signup"
             android:label="@string/title_activity_signup" >
         </activity>

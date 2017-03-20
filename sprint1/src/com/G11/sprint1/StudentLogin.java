@@ -46,13 +46,13 @@ public class StudentLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-                    DataHolder.getInstance().set_s_status(true);
+                    DataHolder.getInstance().setstatus(true);
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");
 					storestudentname(cids,pws);
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
-					startActivityForResult(i, 0);
+					startActivity(i);
 				}
 				else {
 					Toast.makeText(StudentLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
