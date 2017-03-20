@@ -12,7 +12,7 @@ import android.widget.Toast;
 import static com.G11.sprint1.AdvisorLogged.loggedIn;
 
 public class AdvisorLogin extends Activity {
-	Boolean l= DataHolder.getInstance().get_a_status();
+	Boolean l= DataHolder.getInstance().get_a_status(); // receiving user login status (T/F)
 	ADBAdapter userDb;
 	private EditText cid, pw;
 	String cids, pws;
@@ -21,7 +21,7 @@ public class AdvisorLogin extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		if (l) {
+		if (l) { // If user login status is true, then skip the login activity
 			Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
 			startActivityForResult(i, 0);
 		}
@@ -45,7 +45,7 @@ public class AdvisorLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-					DataHolder.getInstance().set_a_status(true);
+					DataHolder.getInstance().set_a_status(true); // setting the user login status as true
 					Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
 					startActivityForResult(i, 0);
 				}
@@ -78,11 +78,12 @@ public class AdvisorLogin extends Activity {
 	}
 
 	private void closeDB() {
-		userDb.close();
+
+        userDb.close();
 	}
 
 
-	public boolean validateInfo (String cid, String pw) {
+	public boolean validateInfo (String cid, String pw) { // validating user login
 		Cursor cursor = userDb.getAllRows();
 		Boolean check= false;
 		if (cursor.moveToFirst()) {
@@ -102,7 +103,7 @@ public class AdvisorLogin extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (resultCode == loggedIn)
+		if (resultCode == loggedIn)// if user login status is true, then finish the activity
 		{
 			finish();
 		}
