@@ -14,6 +14,7 @@ public class AdvisorLogged extends Activity {
 	Button schedule;
 	Button see_feedback;
 	Button add;
+	public static final int loggedIn=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class AdvisorLogged extends Activity {
 		goschedule();
 		go_see_feedback();
 		clickadd();
+		setResult(loggedIn);
 	}
 	public void gosearch(){
 		search=(Button)findViewById(R.id.asearch);

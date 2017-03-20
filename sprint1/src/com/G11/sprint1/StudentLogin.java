@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.G11.sprint1.StudentLogged.loggedIn;
+
 public class StudentLogin extends Activity {
+    Boolean l= DataHolder.getInstance().get_s_status();
 	SDBAdapter userDb;
-	//Boolean validated;
 	private EditText cid, pw;
 	String cids, pws;
 	Button log;
@@ -19,10 +21,10 @@ public class StudentLogin extends Activity {
 	EditText computingid;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        Boolean l= DataHolder.getInstance().getstatus();
+
         if (l) {
             Intent i= new Intent(StudentLogin.this, StudentLogged.class);
-            startActivityForResult();
+            startActivityForResult(i, 0);
             }
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_student_login);
@@ -44,13 +46,13 @@ public class StudentLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-                    DataHolder.getInstance().setstatus(true);
+                    DataHolder.getInstance().set_s_status(true);
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");
 					storestudentname(cids,pws);
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
-					startActivity(i);
+					startActivityForResult(i, 0);
 				}
 				else {
 					Toast.makeText(StudentLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
@@ -118,5 +120,14 @@ public class StudentLogin extends Activity {
 		}
 		return check;
 	}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == loggedIn)
+        {
+            finish();
+        }
+    }
 }
 

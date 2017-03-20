@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.G11.sprint1.AdvisorLogged.loggedIn;
+
 public class AdvisorLogin extends Activity {
+	Boolean l= DataHolder.getInstance().get_a_status();
 	ADBAdapter userDb;
-	//Boolean validated;
 	private EditText cid, pw;
 	String cids, pws;
 	Button log;
@@ -19,6 +21,10 @@ public class AdvisorLogin extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		if (l) {
+			Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
+			startActivityForResult(i, 0);
+		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_advisor_login);
 		openDB ();
@@ -39,8 +45,9 @@ public class AdvisorLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
+					DataHolder.getInstance().set_a_status(true);
 					Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
-					startActivity(i);
+					startActivityForResult(i, 0);
 				}
 				else {
 					Toast.makeText(AdvisorLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
@@ -91,6 +98,14 @@ public class AdvisorLogin extends Activity {
 			} while(cursor.moveToNext());
 		}
 		return check;
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (resultCode == loggedIn)
+		{
+			finish();
+		}
 	}
 }
 
