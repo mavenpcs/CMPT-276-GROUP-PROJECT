@@ -47,6 +47,7 @@ public class AdvisorLogin extends Activity {
 
 				if (validateInfo (cids, pws)) {
 					DataHolder.getInstance().set_a_status(true);
+					storeadvisorname( cids, pws);
 					Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
 					startActivityForResult(i, 0);
 
@@ -65,7 +66,7 @@ public class AdvisorLogin extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(AdvisorLogin.this, A_Signup.class);
 				startActivity(i);
-				storeadvisorname( cids, pws);
+
 			}
 		});
 	}
@@ -90,11 +91,11 @@ public class AdvisorLogin extends Activity {
 		Cursor c = userDb.getAllRows();
 		if (c.moveToFirst()) {
 			do {
-				String u = c.getString(SDBAdapter.col_cid);
-				String p = c.getString(SDBAdapter.col_pw);
+				String u = c.getString(ADBAdapter.col_cid);
+				String p = c.getString(ADBAdapter.col_pw);
 				if (u.equals(id) && p.equals(pw)) {
-					DataHolder.getInstance().setfirstname(c.getString(SDBAdapter.col_first));
-					DataHolder.getInstance().setlastname(c.getString(SDBAdapter.col_last));
+					DataHolder.getInstance().setfirstname(c.getString(ADBAdapter.col_first));
+					DataHolder.getInstance().setlastname(c.getString(ADBAdapter.col_last));
 
 				}
 
