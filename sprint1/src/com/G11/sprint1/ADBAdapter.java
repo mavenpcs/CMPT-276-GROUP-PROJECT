@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class ADBAdapter {
+public class ADBAdapter { // Advisor Account Database
 
     private static final String TAG= "ADBAdapter";
 
-    public static final String key_rowid= "_id";
+    public static final String key_rowid= "_id"; // add variables here
     public static final String key_first= "first";
     public static final String key_last= "last";
     public static final String key_cid= "cid";
@@ -20,7 +20,7 @@ public class ADBAdapter {
     public static final String[] all_keys= new String[] {key_rowid, key_first, key_last,
              key_cid, key_pw};
 
-    public static final int col_rowid= 0;
+    public static final int col_rowid= 0; // add columns here
     public static final int col_first= 1;
     public static final int col_last= 2;
     public static final int col_cid= 3;
@@ -34,7 +34,7 @@ public class ADBAdapter {
             "create table " + database_table
                     + " (" + key_rowid + " integer primary key autoincrement, "
                     + key_first + " text not null, "
-                    + key_last + " text not null, "
+                    + key_last + " text not null, " // data constraints
                     + key_cid + " text not null, "
                     + key_pw + " text not null"
                     + ");";
@@ -59,7 +59,7 @@ public class ADBAdapter {
     public long insertRow (String first, String last, String cid, String pw) {
         ContentValues initialValues= new ContentValues ();
         initialValues.put(key_first, first);
-        initialValues.put(key_last, last);
+        initialValues.put(key_last, last); // entering data into database table
         initialValues.put(key_cid, cid);
         initialValues.put(key_pw, pw);
 
@@ -101,7 +101,7 @@ public class ADBAdapter {
         String where= key_rowid + "=" + rowId;
         ContentValues newValues= new ContentValues ();
         newValues.put(key_first, first);
-        newValues.put(key_last, last);
+        newValues.put(key_last, last);  // replace data with new values
         newValues.put(key_cid, cid);
         newValues.put(key_pw, pw);
         return db.update(database_table, newValues, where, null) != 0;

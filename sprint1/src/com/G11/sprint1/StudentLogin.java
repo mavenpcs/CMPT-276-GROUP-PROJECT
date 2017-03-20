@@ -12,7 +12,7 @@ import android.widget.Toast;
 import static com.G11.sprint1.StudentLogged.loggedIn;
 
 public class StudentLogin extends Activity {
-    Boolean l= DataHolder.getInstance().get_s_status();
+    Boolean l= DataHolder.getInstance().get_s_status(); // receiving user login status (T/F)
 	SDBAdapter userDb;
 	private EditText cid, pw;
 	String cids, pws;
@@ -21,8 +21,7 @@ public class StudentLogin extends Activity {
 	EditText computingid;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
-        if (l) {
+        if (l) { // If user login status is true, then skip the login activity
             Intent i= new Intent(StudentLogin.this, StudentLogged.class);
             startActivityForResult(i, 0);
             }
@@ -46,7 +45,7 @@ public class StudentLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-                    DataHolder.getInstance().set_s_status(true);
+                    DataHolder.getInstance().set_s_status(true); // setting the user login status as true
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");
@@ -103,7 +102,7 @@ public class StudentLogin extends Activity {
 	}
 
 
-	public boolean validateInfo (String cid, String pw) {
+	public boolean validateInfo (String cid, String pw) {// validating user login
 		Cursor cursor = userDb.getAllRows();
 		Boolean check= false;
 		if (cursor.moveToFirst()) {
@@ -124,7 +123,7 @@ public class StudentLogin extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == loggedIn)
+        if (resultCode == loggedIn)// if user login status is true, then finish the activity
         {
             finish();
         }

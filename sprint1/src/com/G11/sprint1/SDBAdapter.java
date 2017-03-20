@@ -9,9 +9,9 @@ import android.util.Log;
 
 public class SDBAdapter {
 
-    private static final String TAG= "SDBAdapter";
+    private static final String TAG= "SDBAdapter"; // Student Account Database
 
-    public static final String key_rowid= "_id";
+    public static final String key_rowid= "_id"; // add variables here
     public static final String key_first= "first";
     public static final String key_last= "last";
     public static final String key_sid= "sid";
@@ -21,7 +21,7 @@ public class SDBAdapter {
     public static final String[] all_keys= new String[] {key_rowid, key_first, key_last,
             key_sid, key_cid, key_pw};
 
-    public static final int col_rowid= 0;
+    public static final int col_rowid= 0; // add columns here
     public static final int col_first= 1;
     public static final int col_last= 2;
     public static final int col_sid= 3;
@@ -37,7 +37,7 @@ public class SDBAdapter {
                     + " (" + key_rowid + " integer primary key autoincrement, "
                     + key_first + " text not null, "
                     + key_last + " text not null, "
-                    + key_sid + " integer not null, "
+                    + key_sid + " integer not null, " // data constraints
                     + key_cid + " text not null, "
                     + key_pw + " text not null"
                     + ");";
@@ -63,7 +63,7 @@ public class SDBAdapter {
         ContentValues initialValues= new ContentValues ();
         initialValues.put(key_first, first);
         initialValues.put(key_last, last);
-        initialValues.put(key_sid, sid);
+        initialValues.put(key_sid, sid); // entering data into database table
         initialValues.put(key_cid, cid);
         initialValues.put(key_pw, pw);
 
@@ -106,7 +106,7 @@ public class SDBAdapter {
         ContentValues newValues= new ContentValues ();
         newValues.put(key_first, first);
         newValues.put(key_last, last);
-        newValues.put(key_sid, sid);
+        newValues.put(key_sid, sid);    // replace data with new values
         newValues.put(key_cid, cid);
         newValues.put(key_pw, pw);
         return db.update(database_table, newValues, where, null) != 0;

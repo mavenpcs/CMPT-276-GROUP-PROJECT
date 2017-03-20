@@ -14,7 +14,7 @@ public class AdvisorLogged extends Activity {
 	Button schedule;
 	Button see_feedback;
 	Button add;
-	public static final int loggedIn=0;
+	public static final int loggedIn=0; // flag for user login state
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class AdvisorLogged extends Activity {
 		goschedule();
 		go_see_feedback();
 		clickadd();
-		setResult(loggedIn);
+		setResult(loggedIn); // flagging user as logged in.
 	}
 	public void gosearch(){
 		search=(Button)findViewById(R.id.asearch);

@@ -14,7 +14,7 @@ public class StudentLogged extends Activity {
 	Button course;
 	Button grade;
 	Button feedback;
-	public static final int loggedIn=0;
+	public static final int loggedIn=0; // flag for user login state
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class StudentLogged extends Activity {
 		gocourse();
 		gograde();
 		goFeedback();
-		setResult(loggedIn);
+		setResult(loggedIn); // flagging user as logged in.
 	}
 	public void goapp(){
 		appointment=(Button)findViewById(R.id.clickbookappointment);
