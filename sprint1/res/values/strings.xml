@@ -119,5 +119,6 @@
     <string name="enter">Enter</string>
     <string name="enter_message">Enter message</string>
     <string name="no_feedback">No feedback</string>
+    <string name="avei">AdvisorEditInfo</string>
 
 </resources>
