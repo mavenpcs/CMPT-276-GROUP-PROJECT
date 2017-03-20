@@ -12,7 +12,7 @@
         android:text="@string/advisor_s_computing_id_" />
 
     <EditText
-        android:id="@+id/entercomputingid"
+        android:id="@+id/editACIDL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +26,7 @@
         android:text="@string/password_" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editAPwL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -40,5 +40,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_in" />
+
+    <Button
+        android:text="@string/sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aSignUp" />
 
 </LinearLayout>

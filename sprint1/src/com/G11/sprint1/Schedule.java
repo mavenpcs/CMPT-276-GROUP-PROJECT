@@ -1,16 +1,41 @@
 package com.G11.sprint1;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 public class Schedule extends Activity {
+	SDBAdapter testDb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
+
+		openDB ();
+        populate();
+
+	}
+
+
+
+    @Override
+	protected void onDestroy() {
+		super.onDestroy();
+		closeDB();
+	}
+
+	private void closeDB() {
+		testDb.close();
+	}
+
+	private void openDB() {
+		testDb= new SDBAdapter(this);
+		testDb.open();
 	}
 
 	@Override
@@ -31,4 +56,25 @@ public class Schedule extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+    private void populate() {
+    Cursor cursor= testDb.getAllRows();
+
+    startManagingCursor(cursor);
+
+    String [] fromFieldNames= new String []
+            {SDBAdapter.key_first, SDBAdapter.key_last, SDBAdapter.key_cid};
+    int [] toViewIDs= new int []
+            {R.id.txtFirst, R.id.txtLast, R.id.txtCid};
+
+    SimpleCursorAdapter myCursorAdapter =
+            new SimpleCursorAdapter(
+                    this,		// Context
+                    R.layout.schedule_layout,	// Row layout template
+                    cursor,					// cursor (set of DB records to map)
+                    fromFieldNames,			// DB Column names
+                    toViewIDs				// View IDs to put information in
+            );
+        ListView myList = (ListView) findViewById(R.id.listViewFromDB);
+        myList.setAdapter(myCursorAdapter);
+    }
 }

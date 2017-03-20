@@ -71,7 +71,11 @@
             android:label="@string/title_activity_advisor_logged" >
         </activity>
         <activity
-            android:name=".Signup"
+            android:name=".S_Signup"
+            android:label="@string/title_activity_signup" >
+        </activity>
+        <activity
+            android:name=".A_Signup"
             android:label="@string/title_activity_signup" >
         </activity>
         <activity

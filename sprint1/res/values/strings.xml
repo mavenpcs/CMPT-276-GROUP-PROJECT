@@ -60,6 +60,13 @@
     <string name="Professor">Professor</string>
     <string name="feedback_received">Feedback Received!</string>
     <string name="see_feedback">See Feedback</string>
+    <string name="app_settings">App Settings</string>
+    <string name="font_large">Large</string>
+    <string name="font_small">Small</string>
+    <string name="first">First</string>
+    <string name="cid">CID</string>
+    <string name="last">Last</string>
+    <string name="Acode">Access Code</string>
     <string-array name="days">
         <item>Monday</item>
         <item>Tuesday</item>
