@@ -46,7 +46,7 @@ public class StudentLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-                    DataHolder.getInstance().setstatus(true);
+                    DataHolder.getInstance().set_s_status(true);
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");
