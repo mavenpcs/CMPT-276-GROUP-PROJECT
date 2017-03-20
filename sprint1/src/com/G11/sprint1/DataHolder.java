@@ -14,6 +14,7 @@ public class DataHolder {
     private String computingid;
     private String firstname;
     private String lastname;
+    private Boolean loggedIn;
 
     private DataHolder(){
         mString = "";
@@ -23,6 +24,7 @@ public class DataHolder {
         computingid="";
         firstname="";
         lastname="";
+        loggedIn=false;
     }
 
 
@@ -47,6 +49,8 @@ public class DataHolder {
     public String getcomputingid(){return this.computingid;}
     public String getfirstname(){return this.firstname;}
     public String getlastname(){return this.lastname;}
+    public Boolean getstatus(){return this.loggedIn;}
+
 
     public void setString(String value){
         mString = value;
@@ -61,4 +65,5 @@ public class DataHolder {
     public void setcomputingid(String s){computingid=s;}
     public void setfirstname(String s){firstname=s;}
     public void setlastname(String s){lastname=s;}
+    public void setstatus(Boolean l){loggedIn=l;}
 }

@@ -19,6 +19,11 @@ public class StudentLogin extends Activity {
 	EditText computingid;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        Boolean l= DataHolder.getInstance().getstatus();
+        if (l) {
+            Intent i= new Intent(StudentLogin.this, StudentLogged.class);
+            startActivityForResult();
+            }
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_student_login);
 		openDB ();
@@ -39,6 +44,7 @@ public class StudentLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
+                    DataHolder.getInstance().setstatus(true);
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");

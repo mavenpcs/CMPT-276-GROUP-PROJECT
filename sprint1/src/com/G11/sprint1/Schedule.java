@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class Schedule extends Activity {
-	SDBAdapter testDb;
+	BOOKINGDB bookDb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +30,13 @@ public class Schedule extends Activity {
 	}
 
 	private void closeDB() {
-		testDb.close();
+
+		bookDb.close();
 	}
 
 	private void openDB() {
-		testDb= new SDBAdapter(this);
-		testDb.open();
+		bookDb= new BOOKINGDB(this);
+		bookDb.open();
 	}
 
 	@Override
@@ -57,14 +58,15 @@ public class Schedule extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
     private void populate() {
-    Cursor cursor= testDb.getAllRows();
+    Cursor cursor= bookDb.getAllRows();
 
     startManagingCursor(cursor);
 
     String [] fromFieldNames= new String []
-            {SDBAdapter.key_first, SDBAdapter.key_last, SDBAdapter.key_cid};
+            {BOOKINGDB.KEY_FIRSTNAME, BOOKINGDB.KEY_LASTNAME, BOOKINGDB.KEY_DAY,
+			BOOKINGDB.KEY_TIME};
     int [] toViewIDs= new int []
-            {R.id.txtFirst, R.id.txtLast, R.id.txtCid};
+            {R.id.txtFirst, R.id.txtLast, R.id.txtDay, R.id.txtTime};
 
     SimpleCursorAdapter myCursorAdapter =
             new SimpleCursorAdapter(
