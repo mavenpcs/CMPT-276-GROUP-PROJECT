@@ -13,6 +13,8 @@ public class AdvisorLogged extends Activity {
 	Button search;
 	Button schedule;
 	Button see_feedback;
+	Button add;
+	public static final int loggedIn=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,11 +23,13 @@ public class AdvisorLogged extends Activity {
 		gochat();
 		goschedule();
 		go_see_feedback();
+		clickadd();
+		setResult(loggedIn);
 	}
 	public void gosearch(){
 		search=(Button)findViewById(R.id.asearch);
 		search.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent i =new Intent(AdvisorLogged.this,SearchActivity.class);
@@ -36,7 +40,7 @@ public class AdvisorLogged extends Activity {
 	public void gochat(){
 		chat=(Button)findViewById(R.id.achat);
 		chat.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent i =new Intent(AdvisorLogged.this,Chat.class);
@@ -47,7 +51,7 @@ public class AdvisorLogged extends Activity {
 	public void goschedule(){
 		schedule=(Button)findViewById(R.id.aschedule);
 		schedule.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent i =new Intent(AdvisorLogged.this,Schedule.class);
@@ -66,5 +70,14 @@ public class AdvisorLogged extends Activity {
 			}
 		});
 	}
-
+	public void clickadd(){
+		add=(Button)findViewById(R.id.add);
+		add.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i=new Intent(AdvisorLogged.this,AdvisorEditInfo.class);
+				startActivity(i);
+			}
+		});
+	}
 }

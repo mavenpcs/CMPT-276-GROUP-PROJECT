@@ -14,11 +14,23 @@ public class DataHolder {
     private String mString;
     private float rating1;
     private float rating2;
+    private String studnetid;
+    private String computingid;
+    private String firstname;
+    private String lastname;
+    private Boolean s_loggedIn;
+    private Boolean a_loggedIn;
 
     private DataHolder(){
         mString = "";
         rating1 = 0;
         rating2 = 0;
+        studnetid="";
+        computingid="";
+        firstname="";
+        lastname="";
+        s_loggedIn=false;
+        a_loggedIn=false;
     }
 
     //makes an instance of this class
@@ -41,6 +53,12 @@ public class DataHolder {
     public float getrating2(){
         return this.rating2;
     }
+    public String getstudnetid(){return this.studnetid;}
+    public String getcomputingid(){return this.computingid;}
+    public String getfirstname(){return this.firstname;}
+    public String getlastname(){return this.lastname;}
+    public Boolean get_s_status(){return this.s_loggedIn;}
+    public Boolean get_a_status(){return this.a_loggedIn;}
 
     //sets the variables that are to be transfered
     public void setString(String value){
@@ -52,4 +70,10 @@ public class DataHolder {
     public void setrating2(float value){
         rating2 = value;
     }
+    public void setstudentid(String s){studnetid=s;}
+    public void setcomputingid(String s){computingid=s;}
+    public void setfirstname(String s){firstname=s;}
+    public void setlastname(String s){lastname=s;}
+    public void set_s_status(Boolean l){s_loggedIn=l;}
+    public void set_a_status(Boolean l){a_loggedIn=l;}
 }

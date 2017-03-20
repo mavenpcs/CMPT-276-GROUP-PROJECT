@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="First"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtFirst"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:id="@+id/txtLast"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtFirst" />
+
+    <TextView
+        android:text="Day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDay"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtLast"
+        android:layout_marginStart="35dp" />
+
+    <TextView
+        android:text="Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtDay"
+        android:layout_toEndOf="@+id/txtDay"
+        android:layout_marginStart="31dp"
+        android:id="@+id/txtTime" />
+</RelativeLayout>

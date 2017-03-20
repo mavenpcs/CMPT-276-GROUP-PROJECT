@@ -9,38 +9,50 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.G11.sprint1.StudentLogged.loggedIn;
+
 public class StudentLogin extends Activity {
+    Boolean l= DataHolder.getInstance().get_s_status();
 	SDBAdapter userDb;
-	//Boolean validated;
 	private EditText cid, pw;
 	String cids, pws;
 	Button log;
 	Button signUp;
-
+	EditText computingid;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+        if (l) {
+            Intent i= new Intent(StudentLogin.this, StudentLogged.class);
+            startActivityForResult(i, 0);
+            }
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_student_login);
 		openDB ();
 		cid= (EditText) findViewById(R.id.editCIDL);
 		pw= (EditText) findViewById(R.id.editPwL);
 		clickLog();
-        setupSignUpButton();
+		setupSignUpButton();
 	}
 
 
 
-    public void clickLog(){
+	public void clickLog(){
 		log=(Button)findViewById(R.id.sLogin);
 		log.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-                cids= cid.getText().toString().trim();
-                pws= pw.getText().toString().trim();
+				cids= cid.getText().toString().trim();
+				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
+                    DataHolder.getInstance().set_s_status(true);
+					computingid=(EditText)findViewById(R.id.editCIDL);
+					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
+					DataHolder.getInstance().setstudentid("");
+					storestudentname(cids,pws);
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
-					startActivity(i);
+					startActivityForResult(i,0);
 				}
 				else {
 					Toast.makeText(StudentLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
@@ -48,16 +60,32 @@ public class StudentLogin extends Activity {
 			}
 		});
 	}
-    public void setupSignUpButton() {
-        signUp= (Button) findViewById(R.id.sSignUp);
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(StudentLogin.this, Signup.class);
-                startActivity(i);
-            }
-        });
-    }
+	private void storestudentname(String id,String pw) {
+		openDB();
+		Cursor c = userDb.getAllRows();
+		if (c.moveToFirst()) {
+			do {
+				String u = c.getString(SDBAdapter.col_cid);
+				String p = c.getString(SDBAdapter.col_pw);
+				if (u.equals(id) && p.equals(pw)) {
+					DataHolder.getInstance().setfirstname(c.getString(SDBAdapter.col_first));
+					DataHolder.getInstance().setlastname(c.getString(SDBAdapter.col_last));
+				}
+
+			} while (c.moveToNext());
+
+		}
+	}
+	public void setupSignUpButton() {
+		signUp= (Button) findViewById(R.id.sSignUp);
+		signUp.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(StudentLogin.this, S_Signup.class);
+				startActivity(i);
+			}
+		});
+	}
 
 	@Override
 	protected void onDestroy() {
@@ -92,5 +120,14 @@ public class StudentLogin extends Activity {
 		}
 		return check;
 	}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == loggedIn)
+        {
+            finish();
+        }
+    }
 }
 

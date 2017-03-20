@@ -14,6 +14,7 @@ public class StudentLogged extends Activity {
 	Button course;
 	Button grade;
 	Button feedback;
+	public static final int loggedIn=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class StudentLogged extends Activity {
 		gocourse();
 		gograde();
 		goFeedback();
+		setResult(loggedIn);
 	}
 	public void goapp(){
 		appointment=(Button)findViewById(R.id.clickbookappointment);

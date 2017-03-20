@@ -79,58 +79,54 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 			public void onClick(View v) {
 				bookingday=sday.getSelectedItem().toString();
 				bookingtime=stime.getSelectedItem().toString();
+				boolean check=true;
+				// if the time has been booked, the boolean value check will change to false
 				if(c.moveToFirst()) {
 					do {
-						if (bookingday.equals(c.getString(BOOKINGDB.COL_DAY)) && bookingtime.equals(c.getString(BOOKINGDB.COL_TIME))) {
-							AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
-							warning.setMessage("This time has been booked! Please book another time period.");
-							warning.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									// TODO Auto-generated method stub
-									dialog.cancel();
-								}
-							});
-							AlertDialog alert = warning.create();
-							alert.setTitle("Warning!");
-							alert.show();
-						} else {
-							AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
-							warning.setMessage("Booked!");
-							warning.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									// TODO Auto-generated method stub
-									Intent i = new Intent(Appointment.this, StudentLogged.class);
-									startActivity(i);
-								}
-							});
-							AlertDialog alert = warning.create();
-							alert.setTitle("Success!");
-							alert.show();
+						if (bookingday.equals(c.getString(BOOKINGDB.COL_DAY)) && bookingtime.equals(c.getString(BOOKINGDB.COL_TIME))){
+							check=false;
+							break;
 						}
 
 					} while (c.moveToNext());
 				}
-				if(!c.moveToFirst()){
-					base.insertRow("","",bookingday,bookingtime);
-					AlertDialog.Builder warning1=new AlertDialog.Builder(Appointment.this);
-					warning1.setMessage("Booked!");
-					warning1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				// if the time has been booked, ask user to select another time
+				if (!check) {
+					AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
+					warning.setMessage("This time has been booked! Please book another time period.");
+					warning.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							Intent i=new Intent(Appointment.this,StudentLogged.class);
-							startActivity(i);
+							dialog.cancel();
 						}
 					});
-					AlertDialog alert=warning1.create();
+					AlertDialog alert = warning.create();
+					alert.setTitle("Warning!");
+					alert.show();
+				}
+				//if the time hasn't been booked yet, store the time into the database
+				else {
+					base.insertRow(DataHolder.getInstance().getfirstname(),DataHolder.getInstance().getlastname(),bookingday,bookingtime);
+					AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
+					warning.setMessage("Booked!");
+					warning.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+
+									/*Intent i = new Intent(Appointment.this,StudentLogged.class);
+									startActivity(i);*/
+							finish();
+						}
+					});
+					AlertDialog alert = warning.create();
 					alert.setTitle("Success!");
 					alert.show();
 				}
+
 
 			}
 		});
