@@ -30,6 +30,7 @@ public class AdvisorLogin extends Activity {
 		openDB ();
 		cid= (EditText) findViewById(R.id.editACIDL);
 		pw= (EditText) findViewById(R.id.editAPwL);
+
 		clickLog();
 		setupSignUpButton();
 	}
@@ -48,6 +49,8 @@ public class AdvisorLogin extends Activity {
 					DataHolder.getInstance().set_a_status(true);
 					Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
 					startActivityForResult(i, 0);
+
+
 				}
 				else {
 					Toast.makeText(AdvisorLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
@@ -62,6 +65,7 @@ public class AdvisorLogin extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(AdvisorLogin.this, A_Signup.class);
 				startActivity(i);
+				storeadvisorname( cids, pws);
 			}
 		});
 	}
@@ -81,7 +85,23 @@ public class AdvisorLogin extends Activity {
 		userDb.close();
 	}
 
+	private void storeadvisorname(String id,String pw) {
+		openDB();
+		Cursor c = userDb.getAllRows();
+		if (c.moveToFirst()) {
+			do {
+				String u = c.getString(SDBAdapter.col_cid);
+				String p = c.getString(SDBAdapter.col_pw);
+				if (u.equals(id) && p.equals(pw)) {
+					DataHolder.getInstance().setfirstname(c.getString(SDBAdapter.col_first));
+					DataHolder.getInstance().setlastname(c.getString(SDBAdapter.col_last));
 
+				}
+
+			} while (c.moveToNext());
+
+		}
+	}
 	public boolean validateInfo (String cid, String pw) {
 		Cursor cursor = userDb.getAllRows();
 		Boolean check= false;
@@ -99,6 +119,8 @@ public class AdvisorLogin extends Activity {
 		}
 		return check;
 	}
+
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
