@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.Date;
+import android.content.SharedPreferences;
 
 public class Chat extends Activity {
 	int counter = 0;
@@ -18,10 +20,14 @@ public class Chat extends Activity {
 		but.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Date currentTime = new Date();
+
+
 
 				counter++;
 				EditText input = (EditText) findViewById(R.id.editText);
-				String str = input.getText().toString();
+				String str = input.getText().toString() +" "+ currentTime.toString();
+
 
 				final TextView firTxt = (TextView) findViewById(R.id.textView);
 				final TextView secTxt = (TextView) findViewById(R.id.textView2);
@@ -50,6 +56,16 @@ public class Chat extends Activity {
 				if(counter / 23 == 0 && counter < 23){
 					if(counter == 1){
 						firTxt.setText(str);
+
+						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
+						SharedPreferences.Editor editor = pref.edit();
+						editor.putString("TextView",str);
+						editor.commit();
+
+						String extractedText = pref.getString("TextView","");
+						firTxt.setText(extractedText);
+
+						//firTxt.setText(str);
 
 					}
 					else if(counter == 2){
@@ -174,7 +190,22 @@ public class Chat extends Activity {
 		});
 	}
 
+	private String getSP(){
+		SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
+		String extractedText = pref.getString("TextView","");
+		return extractedText;
 
+
+	}
+	private void storeSP(){
+		String txt = new Date().toString();
+
+		SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
+		SharedPreferences.Editor editor = pref.edit();
+		editor.putString("TextView","txt");
+		editor.commit();
+
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
