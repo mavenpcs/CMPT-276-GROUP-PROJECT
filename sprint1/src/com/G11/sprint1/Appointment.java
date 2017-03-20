@@ -96,7 +96,7 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 							alert.setTitle("Warning!");
 							alert.show();
 						} else {
-							base.insertRow("","",bookingday,bookingtime);
+							base.insertRow(DataHolder.getInstance().getfirstname(),DataHolder.getInstance().getlastname(),bookingday,bookingtime);
 							AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
 							warning.setMessage("Booked!");
 							warning.setPositiveButton("OK", new DialogInterface.OnClickListener() {

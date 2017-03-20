@@ -42,6 +42,7 @@ public class StudentLogin extends Activity {
 					computingid=(EditText)findViewById(R.id.editCIDL);
 					DataHolder.getInstance().setcomputingid(computingid.getText().toString());
 					DataHolder.getInstance().setstudentid("");
+					storestudentname(cids,pws);
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
 					startActivity(i);
 				}
@@ -51,12 +52,28 @@ public class StudentLogin extends Activity {
 			}
 		});
 	}
+	private void storestudentname(String id,String pw) {
+		openDB();
+		Cursor c = userDb.getAllRows();
+		if (c.moveToFirst()) {
+			do {
+				String u = c.getString(SDBAdapter.col_cid);
+				String p = c.getString(SDBAdapter.col_pw);
+				if (u.equals(id) && p.equals(pw)) {
+					DataHolder.getInstance().setfirstname(c.getString(SDBAdapter.col_first));
+					DataHolder.getInstance().setlastname(c.getString(SDBAdapter.col_last));
+				}
+
+			} while (c.moveToNext());
+
+		}
+	}
 	public void setupSignUpButton() {
 		signUp= (Button) findViewById(R.id.sSignUp);
 		signUp.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(StudentLogin.this, Signup.class);
+				Intent i = new Intent(StudentLogin.this, S_Signup.class);
 				startActivity(i);
 			}
 		});

@@ -12,6 +12,8 @@ public class DataHolder {
     private float rating2;
     private String studnetid;
     private String computingid;
+    private String firstname;
+    private String lastname;
 
     private DataHolder(){
         mString = "";
@@ -19,6 +21,8 @@ public class DataHolder {
         rating2 = 0;
         studnetid="";
         computingid="";
+        firstname="";
+        lastname="";
     }
 
 
@@ -41,6 +45,8 @@ public class DataHolder {
     }
     public String getstudnetid(){return this.studnetid;}
     public String getcomputingid(){return this.computingid;}
+    public String getfirstname(){return this.firstname;}
+    public String getlastname(){return this.lastname;}
 
     public void setString(String value){
         mString = value;
@@ -53,4 +59,6 @@ public class DataHolder {
     }
     public void setstudentid(String s){studnetid=s;}
     public void setcomputingid(String s){computingid=s;}
+    public void setfirstname(String s){firstname=s;}
+    public void setlastname(String s){lastname=s;}
 }
