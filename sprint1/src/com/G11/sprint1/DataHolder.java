@@ -1,12 +1,16 @@
 package com.G11.sprint1;
 
 /**
+ * Singleton File used to get information from one activity to another
+ *
  * Created by Ryan on 3/17/2017.
  */
 
 public class DataHolder {
     private static DataHolder mInstance = null;
 
+
+    //Stores variables to transfer between activities
     private String mString;
     private float rating1;
     private float rating2;
@@ -29,7 +33,7 @@ public class DataHolder {
         a_loggedIn=false;
     }
 
-
+    //makes an instance of this class
     public static DataHolder getInstance(){
         if(mInstance == null)
         {
@@ -38,6 +42,8 @@ public class DataHolder {
         return mInstance;
     }
 
+
+    //returns the variables stored when called
     public String getString(){
         return this.mString;
     }
@@ -54,7 +60,7 @@ public class DataHolder {
     public Boolean get_s_status(){return this.s_loggedIn;}
     public Boolean get_a_status(){return this.a_loggedIn;}
 
-
+    //sets the variables that are to be transfered
     public void setString(String value){
         mString = value;
     }

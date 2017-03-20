@@ -45,7 +45,8 @@ public class AdvisorLogin extends Activity {
 				pws= pw.getText().toString().trim();
 
 				if (validateInfo (cids, pws)) {
-					DataHolder.getInstance().set_a_status(true); // setting the user login status as true
+                    DataHolder.getInstance().set_a_status(true); // setting the user login status as true
+					storeadvisorname( cids, pws);
 					Intent i= new Intent(AdvisorLogin.this, AdvisorLogged.class);
 					startActivityForResult(i, 0);
 				}
@@ -78,11 +79,26 @@ public class AdvisorLogin extends Activity {
 	}
 
 	private void closeDB() {
-
-        userDb.close();
+		userDb.close();
 	}
 
+	private void storeadvisorname(String id,String pw) {
+		openDB();
+		Cursor c = userDb.getAllRows();
+		if (c.moveToFirst()) {
+			do {
+				String u = c.getString(ADBAdapter.col_cid);
+				String p = c.getString(ADBAdapter.col_pw);
+				if (u.equals(id) && p.equals(pw)) {
+					DataHolder.getInstance().setfirstname(c.getString(ADBAdapter.col_first));
+					DataHolder.getInstance().setlastname(c.getString(ADBAdapter.col_last));
 
+				}
+
+			} while (c.moveToNext());
+
+		}
+	}
 	public boolean validateInfo (String cid, String pw) { // validating user login
 		Cursor cursor = userDb.getAllRows();
 		Boolean check= false;

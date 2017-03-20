@@ -2,6 +2,7 @@ package com.G11.sprint1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -193,6 +194,7 @@ public class Chat extends Activity {
 	private String getSP(){
 		SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 		String extractedText = pref.getString("TextView","");
+		Log.d(getClass().getName(), "estracted: " + extractedText);
 		return extractedText;
 
 

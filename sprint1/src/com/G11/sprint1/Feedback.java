@@ -17,6 +17,13 @@ import android.R.string;
 /**
  * Created by Ryan on 3/17/2017.
  */
+/* ------------------------------------------------------
+original plan was to use shared preferences
+Uses a singleton file to transfer data from one activity to another
+code for shared preferences is commented out
+-Ryan
+---------------------------------------------------------
+*/
 
 public class Feedback extends Activity {
     EditText feedbackbox;
@@ -35,34 +42,34 @@ public class Feedback extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
-
+        //save the ratings in variables
         rating1 = (RatingBar)findViewById(R.id.ratingBar_advisor);
         rating2 = (RatingBar)findViewById(R.id.ratingBar_prof);
     }
-    /*
-    public void take_feedback() {
-        feedback = (Button)findViewById(R.id.button_sendfeedback);
-        feedback.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            Toast.makeText(getApplicationContext(), "Feedback Received!",Toast.LENGTH_SHORT).show();
 
-        }
-    }
-    */
-    public void pressloginbutton (View view) {
+    public void sendfeedback (View view) {
+
+        //This function takes the feedback from the user
+        //then stores it in a singleton file, called DataHolder
+        //this DataHolder is how I transfer information from this activity to another activity
+
+
         feedbackbox = (EditText)findViewById(R.id.editText_feedback);
-        String  data = feedbackbox.getText().toString();
-        Toast.makeText(Feedback.this, DataHolder.getInstance().getString(), Toast.LENGTH_LONG).show();
-        DataHolder.getInstance().setString(data);
+        String  data = feedbackbox.getText().toString();        //convert the data in the feedback box to a string
+        //Toast.makeText(Feedback.this, DataHolder.getInstance().getString(), Toast.LENGTH_LONG).show();        Testing purposes
+        DataHolder.getInstance().setString(data);   //In the DataHolder class, set its data to the string we obtained from the user
 
         float a = rating1.getRating();
         float p = rating2.getRating();
-        Log.d(getClass().getName(), "advisor: " + a);
-        Log.d(getClass().getName(), "prof: " + p);
+        Log.d(getClass().getName(), "advisor: " + a);   //testing purposes
+        Log.d(getClass().getName(), "prof: " + p);      //testing purposes
 
-        DataHolder.getInstance().setrating1(p);
+        DataHolder.getInstance().setrating1(p);         //Set the DataHolder's rating variables to the variables we obtained from the user
         DataHolder.getInstance().setrating2(a);
+
+
+
         /*
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(prof_rating, p);
