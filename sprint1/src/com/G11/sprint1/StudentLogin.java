@@ -20,10 +20,10 @@ public class StudentLogin extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         Boolean l= DataHolder.getInstance().getstatus();
-        if (l) {
+        /*if (l) {
             Intent i= new Intent(StudentLogin.this, StudentLogged.class);
             startActivityForResult();
-            }
+            }*/
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_student_login);
 		openDB ();

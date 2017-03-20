@@ -38,7 +38,7 @@ public class Major extends Activity {
 		base=new STUDENTINFO(this);
 		base.open();
 	}
-
+//get student's major from the database by searching studnet's id
 	private String getstudentmajor(String cmptid, String stdid) {
 		openDB();
 		cursor = base.getAllRows();

@@ -21,6 +21,7 @@ public class SearchActivity extends Activity {
 
 
 	}
+	//click to search the student information
 	public void clicksearch(){
 		search=(Button)findViewById(R.id.search);
 		search.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +35,7 @@ public class SearchActivity extends Activity {
 			}
 		});
 	}
+	// the student id and computing id will be stored in dataholder
 	private void storeids(){
 		studentid=(EditText)findViewById(R.id.enterid1);
 		computingid=(EditText)findViewById(R.id.enterid2);

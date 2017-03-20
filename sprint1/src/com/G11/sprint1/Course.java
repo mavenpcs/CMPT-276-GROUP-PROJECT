@@ -41,7 +41,7 @@ public class Course extends Activity {
 		base=new STUDENTINFO(this);
 		base.open();
 	}
-
+	// get the name for course1 from the database
 	private String getcourse1(String cmptid, String stdid){
 		openDB();
 		cursor = base.getAllRows();
@@ -55,6 +55,7 @@ public class Course extends Activity {
 		}
 		return "";
 	}
+	//get the name for course 2 from the database
 	private String getcourse2(String cmptid, String stdid){
 		openDB();
 		cursor = base.getAllRows();
@@ -68,6 +69,7 @@ public class Course extends Activity {
 		}
 		return "";
 	}
+	//get the name for course 3 from the database
 
 	private String getcourse3(String cmptid, String stdid){
 		openDB();
@@ -82,6 +84,7 @@ public class Course extends Activity {
 		}
 		return "";
 	}
+	//get the name for course 4 from the database
 
 	private String getcourse4(String cmptid, String stdid){
 		openDB();

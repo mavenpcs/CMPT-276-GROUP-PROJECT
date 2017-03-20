@@ -80,6 +80,7 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 				bookingday=sday.getSelectedItem().toString();
 				bookingtime=stime.getSelectedItem().toString();
 				boolean check=true;
+				// if the time has been booked, the boolean value check will change to false
 				if(c.moveToFirst()) {
 					do {
 						if (bookingday.equals(c.getString(BOOKINGDB.COL_DAY)) && bookingtime.equals(c.getString(BOOKINGDB.COL_TIME))){
@@ -89,6 +90,7 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 
 					} while (c.moveToNext());
 				}
+				// if the time has been booked, ask user to select another time
 				if (!check) {
 					AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);
 					warning.setMessage("This time has been booked! Please book another time period.");
@@ -104,6 +106,7 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 					alert.setTitle("Warning!");
 					alert.show();
 				}
+				//if the time hasn't been booked yet, store the time into the database
 				else {
 					base.insertRow(DataHolder.getInstance().getfirstname(),DataHolder.getInstance().getlastname(),bookingday,bookingtime);
 					AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);

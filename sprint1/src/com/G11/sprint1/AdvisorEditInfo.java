@@ -57,6 +57,7 @@ public class AdvisorEditInfo extends Activity {
         super.onDestroy();
         DB.close();
     }
+    //the click function make the ADD button clickable, and store the input to the STUDENTINFO database
     public void clickadd(){
         add=(Button)findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +81,7 @@ public class AdvisorEditInfo extends Activity {
             }
         });
     }
+    //the storedata function stores each input in the database
     private void storedata(){
         DB = new STUDENTINFO(this);
         DB.open();
