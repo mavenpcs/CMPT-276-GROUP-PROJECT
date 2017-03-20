@@ -52,7 +52,7 @@ public class StudentLogin extends Activity {
 					DataHolder.getInstance().setstudentid("");
 					storestudentname(cids,pws);
 					Intent i= new Intent(StudentLogin.this, StudentLogged.class);
-					startActivity(i);
+					startActivityForResult(i,0);
 				}
 				else {
 					Toast.makeText(StudentLogin.this, "Login Failed! Check Your Info!", Toast.LENGTH_SHORT).show();
