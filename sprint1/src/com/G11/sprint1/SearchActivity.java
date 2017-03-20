@@ -30,6 +30,7 @@ public class SearchActivity extends Activity {
 				storeids();
 				Intent i = new Intent(SearchActivity.this,InfoActivity.class);
 				startActivity(i);
+
 			}
 		});
 	}
@@ -38,7 +39,7 @@ public class SearchActivity extends Activity {
 		computingid=(EditText)findViewById(R.id.enterid2);
 		DataHolder.getInstance().setstudentid(studentid.getText().toString());
 		DataHolder.getInstance().setcomputingid(computingid.getText().toString());
-		Toast.makeText(SearchActivity.this,DataHolder.getInstance().getcomputingid()+" "+DataHolder.getInstance().getstudnetid(),Toast.LENGTH_SHORT).show();
+		//Toast.makeText(SearchActivity.this,DataHolder.getInstance().getcomputingid()+" "+DataHolder.getInstance().getstudnetid(),Toast.LENGTH_SHORT).show();
 
 	}
 }

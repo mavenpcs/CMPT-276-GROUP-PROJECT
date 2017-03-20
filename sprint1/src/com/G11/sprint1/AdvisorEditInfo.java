@@ -70,8 +70,8 @@ public class AdvisorEditInfo extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // TODO Auto-generated method stub
-                        Intent i=new Intent(AdvisorEditInfo.this,AdvisorLogged.class);
-                        startActivity(i);
+
+                        finish();
                     }
                 });
                 AlertDialog alert = A.create();

@@ -104,8 +104,8 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
 									// TODO Auto-generated method stub
-									Intent i = new Intent(Appointment.this, StudentLogged.class);
-									startActivity(i);
+
+									finish();
 								}
 							});
 							AlertDialog alert = warning.create();
@@ -124,8 +124,8 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							Intent i=new Intent(Appointment.this,StudentLogged.class);
-							startActivity(i);
+
+							finish();
 						}
 					});
 					AlertDialog alert=warning1.create();
