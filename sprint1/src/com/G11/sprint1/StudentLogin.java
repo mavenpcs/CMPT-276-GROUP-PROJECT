@@ -53,7 +53,7 @@ public class StudentLogin extends Activity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StudentLogin.this, Signup.class);
+                Intent i = new Intent(StudentLogin.this, S_Signup.class);
                 startActivity(i);
             }
         });
