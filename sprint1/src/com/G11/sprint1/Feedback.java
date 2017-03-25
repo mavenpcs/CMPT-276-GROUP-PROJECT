@@ -58,18 +58,42 @@ public class Feedback extends Activity {
         feedbackbox = (EditText)findViewById(R.id.editText_feedback);
         String  data = feedbackbox.getText().toString();        //convert the data in the feedback box to a string
         //Toast.makeText(Feedback.this, DataHolder.getInstance().getString(), Toast.LENGTH_LONG).show();        Testing purposes
-        DataHolder.getInstance().setString(data);   //In the DataHolder class, set its data to the string we obtained from the user
+        int numofFB = DataHolder.getInstance().getNumFB();
+        numofFB++;
+
 
         float a = rating1.getRating();
         float p = rating2.getRating();
         //Log.d(getClass().getName(), "advisor: " + a);   //testing purposes
         //Log.d(getClass().getName(), "prof: " + p);      //testing purposes
+        if (numofFB == 1) {
+            DataHolder.getInstance().setnumFB(numofFB);
+            DataHolder.getInstance().setrating1(p);         //Set the DataHolder's rating variables to the variables we obtained from the user
+            DataHolder.getInstance().setrating2(a);
+            DataHolder.getInstance().setString(data);   //In the DataHolder class, set its data to the string we obtained from the use
+        }
+        else if (numofFB == 2){
+            DataHolder.getInstance().setnumFB(numofFB);
+            DataHolder.getInstance().setrating1_2(p);
+            DataHolder.getInstance().setrating2_2(a);
+            DataHolder.getInstance().setString2(data);   //In the DataHolder class, set its data to the string we obtained from the use
+        }
+        else if (numofFB ==3){
+            DataHolder.getInstance().setnumFB(numofFB);
+            DataHolder.getInstance().setrating1_3(p);
+            DataHolder.getInstance().setrating2_3(a);
+            DataHolder.getInstance().setString3(data);   //In the DataHolder class, set its data to the string we obtained from the use
+        }
+        else {
+            DataHolder.getInstance().setnumFB(3);
+            DataHolder.getInstance().setrating1(p);
+            DataHolder.getInstance().setrating2(a);
+            DataHolder.getInstance().setString(data);   //In the DataHolder class, set its data to the string we obtained from the use
+        }
+            Toast.makeText(Feedback.this, "Feedback Sent!", Toast.LENGTH_SHORT).show();
+            finish();
 
-        DataHolder.getInstance().setrating1(p);         //Set the DataHolder's rating variables to the variables we obtained from the user
-        DataHolder.getInstance().setrating2(a);
 
-        Toast.makeText(Feedback.this, "Feedback Sent!", Toast.LENGTH_SHORT).show();
-        finish();
 
         /*
         SharedPreferences.Editor editor = sharedPreferences.edit();

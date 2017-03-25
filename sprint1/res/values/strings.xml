@@ -33,7 +33,7 @@
     <string name="edit_schedule">Edit Schedule</string>
     <string name="title_activity_chat">Chat</string>
     <string name="student_and_advisor_are_able_to_chat_on_this_activity_">Student and advisor are able to chat on this activity.</string>
-    <string name="chat">Chat</string>
+    <string name="chat">Leave a Message</string>
     <string name="title_activity_advisor_login">AdvisorLogin</string>
     <string name="title_activity_student_login">StudentLogin</string>
     <string name="advisor">Advisor</string>
@@ -120,5 +120,6 @@
     <string name="enter_message">Enter message</string>
     <string name="no_feedback">No feedback</string>
     <string name="avei">AdvisorEditInfo</string>
+    <string name="next">Next</string>
 
 </resources>
