@@ -10,7 +10,7 @@ public class DataHolder {
     private static DataHolder mInstance = null;
 
 
-    //Stores variables to transfer between activities
+    //Stores variables to transfer between activitiegis
     private String mString;
     private float rating1;
     private float rating2;

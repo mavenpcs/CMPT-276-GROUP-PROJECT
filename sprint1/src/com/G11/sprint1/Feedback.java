@@ -62,13 +62,14 @@ public class Feedback extends Activity {
 
         float a = rating1.getRating();
         float p = rating2.getRating();
-        Log.d(getClass().getName(), "advisor: " + a);   //testing purposes
-        Log.d(getClass().getName(), "prof: " + p);      //testing purposes
+        //Log.d(getClass().getName(), "advisor: " + a);   //testing purposes
+        //Log.d(getClass().getName(), "prof: " + p);      //testing purposes
 
         DataHolder.getInstance().setrating1(p);         //Set the DataHolder's rating variables to the variables we obtained from the user
         DataHolder.getInstance().setrating2(a);
 
-
+        Toast.makeText(Feedback.this, "Feedback Sent!", Toast.LENGTH_SHORT).show();
+        finish();
 
         /*
         SharedPreferences.Editor editor = sharedPreferences.edit();
