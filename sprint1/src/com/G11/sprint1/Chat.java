@@ -2,6 +2,7 @@ package com.G11.sprint1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,27 +12,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.util.Date;
 import android.content.SharedPreferences;
+import android.widget.ImageButton;
 
 
 public class Chat extends Activity {
 
 	int counter;		//counter
 
-	public Button but;//button for Enter
+	public ImageButton but;//button for Enter
+
 
 	public void init() {							//after clicking the button
-		but = (Button) findViewById(R.id.button);
+		but = (ImageButton) findViewById(R.id.imageButton);
 		but.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Date currentTime = new Date();
+				CharSequence cs = DateFormat.format("MM-dd HH:mm:ss,",currentTime.getTime());
 
 
 
 				counter++;
 
 				EditText input = (EditText) findViewById(R.id.editText);
-				String str = DataHolder.getInstance().getlastname()+" "+input.getText().toString() +" "+ currentTime.toString();
+				String str = DataHolder.getInstance().getfirstname()+": "+input.getText().toString() +"　"+ cs.toString();
 
 
 				final TextView firTxt = (TextView) findViewById(R.id.textView);   // set a name to each textView
@@ -67,7 +71,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);//store the textView value by Share Pref
 						SharedPreferences.Editor editor = pref.edit();						//
 						editor.putString("TextView",str);									//
-						editor.commit();													//till here
+						editor.apply();													//till here
 
 						String extractedText = pref.getString("TextView","");//get Share Pref// get the Share Pref value
 						firTxt.setText(extractedText);						//till here
@@ -76,12 +80,11 @@ public class Chat extends Activity {
 
 					}
 					else if(counter == 2){
-
 						secTxt.setText(str);
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView2",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView2","");
@@ -94,7 +97,7 @@ public class Chat extends Activity {
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView3",str);
 					//	editor.putInt("counter",counter);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView3","");
@@ -106,7 +109,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView4",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView4","");
@@ -118,7 +121,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView5",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView5","");
@@ -130,7 +133,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView6",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView6","");
@@ -142,7 +145,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView7",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView7","");
@@ -154,7 +157,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView8",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView8","");
@@ -166,7 +169,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView9",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView9","");
@@ -178,7 +181,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView10",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView10","");
@@ -190,7 +193,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView11",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView11","");
@@ -202,7 +205,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView12",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView12","");
@@ -214,7 +217,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView13",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView13","");
@@ -226,7 +229,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView14",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView14","");
@@ -238,7 +241,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView15",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView15","");
@@ -250,7 +253,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView16",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView16","");
@@ -262,7 +265,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView17",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView17","");
@@ -274,7 +277,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView18",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView18","");
@@ -287,7 +290,7 @@ public class Chat extends Activity {
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView19",str);
 						editor.putInt("counter",counter);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView19","");
@@ -299,7 +302,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView20",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView20","");
@@ -311,7 +314,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView21",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView21","");
@@ -323,7 +326,7 @@ public class Chat extends Activity {
 						SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("TextView22",str);
-						editor.commit();
+						editor.apply();
 
 
 						String extractedText = pref.getString("TextView22","");
@@ -335,52 +338,187 @@ public class Chat extends Activity {
 				else{
 					String a = secTxt.getText().toString();		//if all textViews are full shift each of the one by one
 					firTxt.setText(a);
+
+					SharedPreferences pref = getSharedPreferences("da App",MODE_PRIVATE);
+					SharedPreferences.Editor editor = pref.edit();
+					editor.putString("TextView",a);
+					editor.apply();
+
+
+					String extractedText = pref.getString("TextView","");
+					firTxt.setText(extractedText);
+
+
 					String b = thiTxt.getText().toString();
 					secTxt.setText(b);
+
+					editor.putString("TextView2",b);
+					editor.commit();
+
+					String extractedText2 = pref.getString("TextView2","");
+					secTxt.setText(extractedText2);
+
 					String c = forTxt.getText().toString();
 					thiTxt.setText(c);
+					editor.putString("TextView3",c);
+					editor.commit();
+
+					String extractedText3 = pref.getString("TextView3","");
+					thiTxt.setText(extractedText3);
+
 					String d = fifTxt.getText().toString();
 					forTxt.setText(d);
+					editor.putString("TextView4",d);
+					editor.commit();
+
+					String extractedText4 = pref.getString("TextView4","");
+					forTxt.setText(extractedText4);
+
 					String e = sixTxt.getText().toString();
 					fifTxt.setText(e);
+					editor.putString("TextView5",e);
+					editor.commit();
+
+					String extractedText5 = pref.getString("TextView5","");
+					fifTxt.setText(extractedText5);
+
 					String f = sevTxt.getText().toString();
 					sixTxt.setText(f);
+					editor.putString("TextView6",f);
+					editor.commit();
+
+					String extractedText6 = pref.getString("TextView6","");
+					sixTxt.setText(extractedText6);
 
 					String g = eigTxt.getText().toString();
 					sevTxt.setText(g);
+					editor.putString("TextView7",g);
+					editor.commit();
+
+					String extractedText7 = pref.getString("TextView7","");
+					sevTxt.setText(extractedText7);
+
 					String h = ninTxt.getText().toString();
 					eigTxt.setText(h);
+					editor.putString("TextView8",h);
+					editor.commit();
+
+					String extractedText8 = pref.getString("TextView8","");
+					eigTxt.setText(extractedText8);
+
 					String i = tenTxt.getText().toString();
 					ninTxt.setText(i);
+					editor.putString("TextView9",i);
+					editor.commit();
+
+					String extractedText9 = pref.getString("TextView9","");
+					ninTxt.setText(extractedText9);
+
 					String j = eleTxt.getText().toString();
 					tenTxt.setText(j);
+					editor.putString("TextView10",j);
+					editor.commit();
+
+					String extractedText10 = pref.getString("TextView10","");
+					tenTxt.setText(extractedText10);
+
 					String k = tweTxt.getText().toString();
 					eleTxt.setText(k);
+					editor.putString("TextView11",k);
+					editor.commit();
+
+					String extractedText11 = pref.getString("TextView11","");
+					eleTxt.setText(extractedText11);
+
 					String l = thitTxt.getText().toString();
 					tweTxt.setText(l);
+					editor.putString("TextView12",l);
+					editor.commit();
+
+					String extractedText12 = pref.getString("TextView12","");
+					tweTxt.setText(extractedText12);
+
 					String m = fortTxt.getText().toString();
 					thitTxt.setText(m);
+					editor.putString("TextView13",m);
+					editor.commit();
+
+					String extractedText13 = pref.getString("TextView13","");
+					thitTxt.setText(extractedText13);
 					String n = fiftTxt.getText().toString();
 					fortTxt.setText(n);
+					editor.putString("TextView14",n);
+					editor.commit();
+
+					String extractedText14 = pref.getString("TextView14","");
+					fortTxt.setText(extractedText14);
+
 					String o = sixtTxt.getText().toString();
 					fiftTxt.setText(o);
+					editor.putString("TextView15",o);
+					editor.commit();
+
+					String extractedText15 = pref.getString("TextView15","");
+					fiftTxt.setText(extractedText15);
+
 					String p = sevtTxt.getText().toString();
 					sixtTxt.setText(p);
+					editor.putString("TextView16",p);
+					editor.commit();
+
+					String extractedText16 = pref.getString("TextView16","");
+					sixtTxt.setText(extractedText16);
+
 					String q = eigtTxt.getText().toString();
 					sevtTxt.setText(q);
+					editor.putString("TextView17",q);
+					editor.commit();
+
+					String extractedText17 = pref.getString("TextView17","");
+					sevtTxt.setText(extractedText17);
+
 					String r = nintTxt.getText().toString();
 					eigtTxt.setText(r);
+					editor.putString("TextView18",r);
+					editor.commit();
+
+					String extractedText18 = pref.getString("TextView18","");
+					eigtTxt.setText(extractedText18);
+
 					String s = twentyTxt.getText().toString();
 					nintTxt.setText(s);
+					editor.putString("TextView19",s);
+					editor.commit();
+
+					String extractedText19 = pref.getString("TextView19","");
+					nintTxt.setText(extractedText19);
+
 					String t = twentyoTxt.getText().toString();
 					twentyTxt.setText(t);
+					editor.putString("TextView20",t);
+					editor.commit();
+
+					String extractedText20 = pref.getString("TextView20","");
+					twentyTxt.setText(extractedText20);
+
 					String u = twentytTxt.getText().toString();
 					twentyoTxt.setText(u);						//till here
+					editor.putString("TextView21",u);
+					editor.commit();
+
+					String extractedText21 = pref.getString("TextView21","");
+					twentyoTxt.setText(extractedText21);
 
 
-					twentytTxt.setText(str);					//update the last textView to user input
+					twentytTxt.setText(str);//update the last textView to user input
+					editor.putString("TextView22",str);
+					editor.commit();
+
+					String extractedText22 = pref.getString("TextView22","");
+					twentytTxt.setText(extractedText22);
 					input.setText("");							// and clean EditText
 				}
+
 
 
 
