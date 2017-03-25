@@ -47,6 +47,7 @@ public class AdvisorEditInfo extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_advisoreditinfo);
         super.onCreate(savedInstanceState);
+        openDB();
         clickadd();
 
 
@@ -57,12 +58,17 @@ public class AdvisorEditInfo extends Activity {
         super.onDestroy();
         DB.close();
     }
-    //the click function make the ADD button clickable, and store the input to the STUDENTINFO database
+    //the click function make the ADD button clickable, and store the input to the STUDENTINFO database]
+    private void openDB(){
+        DB = new STUDENTINFO(this);
+        DB.open();
+    }
     public void clickadd(){
         add=(Button)findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 storedata();
                 AlertDialog.Builder A = new AlertDialog.Builder(AdvisorEditInfo.this);
                 A.setMessage("Data pushed.");
@@ -83,8 +89,7 @@ public class AdvisorEditInfo extends Activity {
     }
     //the storedata function stores each input in the database
     private void storedata(){
-        DB = new STUDENTINFO(this);
-        DB.open();
+
         first=(EditText)findViewById(R.id.firstname);
         last=(EditText)findViewById(R.id.lastname);
         major=(EditText)findViewById(R.id.majora);

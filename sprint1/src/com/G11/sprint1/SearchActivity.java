@@ -28,12 +28,23 @@ public class SearchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				storeids();
-				Intent i = new Intent(SearchActivity.this,InfoActivity.class);
-				startActivity(i);
-
+				if (check()){
+					Toast.makeText(SearchActivity.this, "Please enter student id or computing id!", Toast.LENGTH_SHORT).show();
+				}
+				else {
+					storeids();
+					Intent i = new Intent(SearchActivity.this, InfoActivity.class);
+					startActivity(i);
+				}
 			}
 		});
+	}
+	// check if the computing id and studentid is blank
+	private boolean check(){
+		studentid=(EditText)findViewById(R.id.enterid1);
+		computingid=(EditText)findViewById(R.id.enterid2);
+		return studentid.getText().toString().isEmpty()&& computingid.getText().toString().isEmpty();
+
 	}
 	// the student id and computing id will be stored in dataholder
 	private void storeids(){
