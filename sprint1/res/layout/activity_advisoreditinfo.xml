@@ -21,123 +21,11 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignBottom="@+id/firstname"
-        android:layout_toEndOf="@+id/firstname"
-        android:id="@+id/lastname"
-        android:hint="@string/lastname" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/grade1"
         android:layout_alignBaseline="@+id/course1"
         android:layout_alignBottom="@+id/course1"
         android:layout_toEndOf="@+id/course1"
         android:hint="@string/grade1" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course2"
-        android:layout_alignBaseline="@+id/grade1"
-        android:layout_alignBottom="@+id/grade1"
-        android:layout_toEndOf="@+id/grade1"
-        android:hint="@string/course2" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course1"
-        android:layout_below="@+id/firstname"
-        android:layout_alignParentStart="true"
-        android:hint="@string/course1" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade2"
-        android:layout_below="@+id/grade1"
-        android:layout_alignParentStart="true"
-        android:hint="@string/grade2" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course3"
-        android:layout_below="@+id/grade1"
-        android:layout_toEndOf="@+id/grade2"
-        android:hint="@string/course3" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade3"
-        android:layout_below="@+id/course2"
-        android:layout_toEndOf="@+id/course3"
-        android:hint="@string/grade3" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course4"
-        android:layout_below="@+id/grade2"
-        android:layout_alignParentStart="true"
-        android:hint="@string/course4" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade4"
-        android:layout_alignBaseline="@+id/course4"
-        android:layout_alignBottom="@+id/course4"
-        android:layout_toEndOf="@+id/grade2"
-        android:hint="@string/grade4" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course5"
-        android:layout_below="@+id/grade3"
-        android:layout_toEndOf="@+id/grade4"
-        android:hint="@string/course5" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade5"
-        android:layout_below="@+id/course4"
-        android:layout_alignParentStart="true"
-        android:hint="@string/grade5" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course6"
-        android:layout_below="@+id/grade4"
-        android:layout_toEndOf="@+id/course4"
-        android:hint="@string/course6" />
 
     <EditText
         android:layout_width="100dp"
@@ -154,122 +42,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/course7"
-        android:layout_below="@+id/grade5"
-        android:layout_alignParentStart="true"
-        android:hint="@string/course7" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade7"
-        android:layout_below="@+id/course6"
-        android:layout_toEndOf="@+id/grade5"
-        android:hint="@string/grade7" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course8"
-        android:layout_below="@+id/grade6"
-        android:layout_toEndOf="@+id/course6"
-        android:hint="@string/course8" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade8"
-        android:layout_below="@+id/course7"
-        android:layout_alignParentStart="true"
-        android:hint="@string/grade8" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course9"
-        android:layout_below="@+id/grade7"
-        android:layout_toEndOf="@+id/course7"
-        android:hint="@string/course9" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade9"
-        android:layout_below="@+id/course8"
-        android:layout_toEndOf="@+id/grade7"
-        android:hint="@string/grade9" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/course10"
-        android:layout_below="@+id/grade8"
-        android:layout_alignParentStart="true"
-        android:hint="@string/course10" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/grade10"
-        android:layout_alignBaseline="@+id/course10"
-        android:layout_alignBottom="@+id/course10"
-        android:layout_toEndOf="@+id/grade8"
-        android:hint="@string/grade10" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/taking1"
-        android:layout_alignBaseline="@+id/grade10"
-        android:layout_alignBottom="@+id/grade10"
-        android:layout_toEndOf="@+id/course9"
-        android:hint="@string/taking1" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/taking2"
-        android:layout_below="@+id/course10"
-        android:layout_alignParentStart="true"
-        android:hint="@string/taking2" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/taking4"
-        android:layout_below="@+id/taking1"
-        android:layout_toEndOf="@+id/grade10"
-        android:hint="@string/taking4" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/studentid1"
-        android:layout_below="@+id/taking2"
-        android:layout_alignParentStart="true"
-        android:hint="@string/studentid" />
+        android:id="@+id/lastname"
+        android:hint="@string/lastname"
+        android:layout_below="@+id/firstname"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="100dp"
@@ -278,28 +54,18 @@
         android:ems="10"
         android:id="@+id/majora"
         android:hint="@string/major"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/lastname" />
+        android:layout_below="@+id/lastname"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/taking3"
-        android:hint="@string/taking3"
-        android:layout_alignBaseline="@+id/taking2"
-        android:layout_alignBottom="@+id/taking2"
-        android:layout_toEndOf="@+id/taking2" />
-
-    <Button
-        android:text="@string/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:id="@+id/add"
-        android:layout_below="@+id/computingid1"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/studentid1"
+        android:hint="@string/studentid"
+        android:layout_below="@+id/majora"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="100dp"
@@ -308,8 +74,243 @@
         android:ems="10"
         android:id="@+id/computingid1"
         android:hint="@string/computingid"
-        android:layout_alignBaseline="@+id/studentid1"
-        android:layout_alignBottom="@+id/studentid1"
+        android:layout_below="@+id/studentid1"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course3"
+        android:hint="@string/course3"
+        android:layout_alignBaseline="@+id/majora"
+        android:layout_alignBottom="@+id/majora"
+        android:layout_toEndOf="@+id/majora" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade3"
+        android:hint="@string/grade3"
+        android:layout_alignBaseline="@+id/course3"
+        android:layout_alignBottom="@+id/course3"
+        android:layout_toEndOf="@+id/course3" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade2"
+        android:hint="@string/grade2"
+        android:layout_below="@+id/course1"
+        android:layout_toEndOf="@+id/course3" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course1"
+        android:hint="@string/course1"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/firstname" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course2"
+        android:hint="@string/course2"
+        android:layout_below="@+id/course1"
+        android:layout_toEndOf="@+id/firstname" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course4"
+        android:hint="@string/course4"
+        android:layout_below="@+id/course3"
+        android:layout_toEndOf="@+id/studentid1" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade4"
+        android:hint="@string/grade4"
+        android:layout_below="@+id/grade3"
+        android:layout_toEndOf="@+id/course3" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course6"
+        android:hint="@string/course6"
+        android:layout_below="@+id/computingid1"
+        android:layout_toEndOf="@+id/computingid1" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course5"
+        android:hint="@string/course5"
+        android:layout_below="@+id/course4"
+        android:layout_toEndOf="@+id/studentid1" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade5"
+        android:hint="@string/grade5"
+        android:layout_alignBaseline="@+id/course5"
+        android:layout_alignBottom="@+id/course5"
+        android:layout_toEndOf="@+id/course4" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course7"
+        android:hint="@string/course7"
+        android:layout_below="@+id/course6"
+        android:layout_alignStart="@+id/course6" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade7"
+        android:hint="@string/grade7"
+        android:layout_below="@+id/grade6"
+        android:layout_toEndOf="@+id/course7" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/taking1"
+        android:hint="@string/taking1"
+        android:layout_alignBaseline="@+id/course6"
+        android:layout_alignBottom="@+id/course6"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/taking2"
+        android:hint="@string/taking2"
+        android:layout_below="@+id/taking1"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/taking3"
+        android:hint="@string/taking3"
+        android:layout_alignBaseline="@+id/course8"
+        android:layout_alignBottom="@+id/course8"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course9"
+        android:hint="@string/course9"
+        android:layout_below="@+id/grade8"
+        android:layout_toEndOf="@+id/taking3" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/taking4"
+        android:hint="@string/taking4"
+        android:layout_below="@+id/taking3"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course8"
+        android:hint="@string/course8"
+        android:layout_below="@+id/course7"
         android:layout_toEndOf="@+id/taking2" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade8"
+        android:hint="@string/grade8"
+        android:layout_alignBaseline="@+id/course8"
+        android:layout_alignBottom="@+id/course8"
+        android:layout_toEndOf="@+id/course7" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade9"
+        android:hint="@string/grade9"
+        android:layout_alignBaseline="@+id/course9"
+        android:layout_alignBottom="@+id/course9"
+        android:layout_toEndOf="@+id/course9" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/course10"
+        android:hint="@string/course10"
+        android:layout_below="@+id/course9"
+        android:layout_toEndOf="@+id/taking4" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/grade10"
+        android:hint="@string/grade10"
+        android:layout_alignBaseline="@+id/course10"
+        android:layout_alignBottom="@+id/course10"
+        android:layout_toEndOf="@+id/course10" />
+
+    <Button
+        android:text="@string/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add"
+        android:layout_below="@+id/course10"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
