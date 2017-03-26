@@ -10,7 +10,9 @@
     android:id="@+id/chatinfo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/student_and_advisor_are_able_to_chat_on_this_activity_"/>
+    android:text="Start chat with advisors and students"
+    android:textStyle="normal|bold|italic"
+    android:textAllCaps="true" />
 
     <TextView
         android:layout_width="match_parent"
