@@ -90,6 +90,7 @@ public class Appointment extends Activity implements AdapterView.OnItemSelectedL
 
 					} while (c.moveToNext());
 				}
+
 				// if the time has been booked, ask user to select another time
 				if (!check) {
 					AlertDialog.Builder warning = new AlertDialog.Builder(Appointment.this);

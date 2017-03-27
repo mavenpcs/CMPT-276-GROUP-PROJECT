@@ -8,18 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.G11.sprint1.Appointment"
     android:background="@drawable/background">
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/dayspinner"
-        />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/timespinner"
-        android:layout_below="@+id/dayspinner"
-        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/bookappointment"
@@ -28,4 +16,18 @@
         android:text="@string/book_appointment"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayspinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timespinner"
+        android:layout_below="@+id/dayspinner"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -6,16 +6,72 @@
     android:padding="10dp"
 	android:weightSum="1"
 	android:background="@drawable/background">
-	<TextView
-	    android:id="@+id/scheduletitle"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:textSize="25sp"
-	    android:text="@string/schedule"/>
 
-	<ListView
+    <TextView
+        android:id="@+id/scheduletitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="@string/schedule"
+        android:textStyle="normal|bold" />
+
+    <ListView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="260dp"
 		android:id="@+id/listViewFromDB" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@string/edit_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/txtEditSchedule" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/txtEditSchedule"
+            android:id="@+id/editSFName"
+            android:hint="@string/first_name" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editSLName"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/spinDay" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editSLName"
+            android:hint="@string/last_name"
+            android:layout_below="@+id/editSFName"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinTime"
+            android:layout_below="@+id/spinDay"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="@string/after_entering_required_info_click_and_hold_on_the_schedule_you_wish_to_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtInst"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
 
 </LinearLayout>

@@ -121,5 +121,8 @@
     <string name="no_feedback">No feedback</string>
     <string name="avei">AdvisorEditInfo</string>
     <string name="next">Next</string>
+    <string name="day">Day</string>
+    <string name="time">Time</string>
+    <string name="after_entering_required_info_click_and_hold_on_the_schedule_you_wish_to_edit">After entering required info, click and hold on the schedule you wish to edit.</string>
 
 </resources>
