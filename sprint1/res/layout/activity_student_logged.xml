@@ -10,25 +10,30 @@
 	    android:id="@+id/clickbookappointment"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+		android:background="@drawable/custombutton"
     	android:text="@string/book_appointment"/>
 	<Button 
 	    android:id="@+id/clickchat"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
     	android:text="@string/chat"/>
 	<Button 
 	    android:id="@+id/clickgrade"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
     	android:text="@string/grade"/>
 	<Button 
 	    android:id="@+id/clickcourse"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
     	android:text="@string/course"/>	
    	<Button 
 	    android:id="@+id/clickfeedback"
 	    android:layout_width="match_parent"
     	android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
     	android:text="@string/feedback"/>
 </LinearLayout>

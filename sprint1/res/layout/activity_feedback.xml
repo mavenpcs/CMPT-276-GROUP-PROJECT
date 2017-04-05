@@ -40,6 +40,7 @@
         android:layout_marginBottom="17dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:background="@drawable/custombutton"
         android:onClick="sendfeedback"
         />
 

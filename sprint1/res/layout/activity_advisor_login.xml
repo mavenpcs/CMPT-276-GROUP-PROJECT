@@ -40,12 +40,14 @@
         android:id="@+id/aLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
         android:text="@string/sign_in" />
 
     <Button
         android:text="@string/sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
         android:id="@+id/aSignUp" />
 
 </LinearLayout>

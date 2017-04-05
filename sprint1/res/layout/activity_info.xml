@@ -9,16 +9,19 @@
 	    android:id="@+id/showgrade"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+		android:background="@drawable/custombutton"
 	    android:text="@string/student_s_grade"/>
 	<Button
  	    android:id="@+id/showcourse"
  	    android:layout_width="match_parent"
  	    android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
  	    android:text="@string/student_s_courses"/>
  	<Button
  	    android:id="@+id/showmajor"
  	    android:layout_width="match_parent"
  	    android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
  	    android:text="@string/student_s_major"/>
 
 </LinearLayout>

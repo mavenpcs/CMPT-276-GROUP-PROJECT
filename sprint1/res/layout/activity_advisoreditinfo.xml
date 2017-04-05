@@ -311,6 +311,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/add"
         android:layout_below="@+id/course10"
+        android:background="@drawable/custombutton"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
