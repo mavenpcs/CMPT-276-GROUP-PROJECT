@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:text="@string/book_appointment"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/custombutton"/>
 
     <Spinner
         android:layout_width="match_parent"
