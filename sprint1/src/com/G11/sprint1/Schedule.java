@@ -47,7 +47,7 @@ public class Schedule extends Activity {
             @Override
             public void onClick(View v) {
                 Cursor c= base.getAllRows();
-                if (c.moveToNext()) {
+                if (c.getColumnCount() > 0) {
                     base.deleteAll();
                     populate();
                     Toast.makeText(Schedule.this, "All schedule cleared!", Toast.LENGTH_SHORT).show();
