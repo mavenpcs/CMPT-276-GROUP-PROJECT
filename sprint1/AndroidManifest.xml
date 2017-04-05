@@ -89,6 +89,10 @@
         <activity
             android:name=".SeeFeedback"
             android:label="seefeedback" />
+        <activity
+            android:name=".Edit_Schedule"
+            android:label="Edit Schedule"
+            android:theme="@style/AppTheme.CustomTheme"/>
     </application>
 
 </manifest>

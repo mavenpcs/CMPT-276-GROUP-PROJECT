@@ -1,48 +1,97 @@
 package com.G11.sprint1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class Schedule extends Activity {
 	BOOKINGDB base;
-	Spinner sday;
-	Spinner stime;
-    EditText first, last;
-	ListView myList;
+    ListView myList;
+    long idd;
+    String first, last, sday, stime;
+    Boolean entry, date;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_schedule);
-		myList = (ListView) findViewById(R.id.listViewFromDB);
-        first= (EditText) findViewById(R.id.editSFName);
-        last= (EditText) findViewById(R.id.editSLName);
-		sday=(Spinner)findViewById(R.id.spinDay);
-		stime=(Spinner)findViewById(R.id.spinTime);
-		ArrayAdapter adapter1= ArrayAdapter.createFromResource(this, R.array.days, android.R.layout.simple_spinner_item);
-		sday.setAdapter(adapter1);
-		ArrayAdapter adapter2= ArrayAdapter.createFromResource(this, R.array.time, android.R.layout.simple_spinner_item);
-		stime.setAdapter(adapter2);
-		//stime.setOnItemSelectedListener(this);
+        myList = (ListView) findViewById(R.id.listViewFromDB);
 
+        setupClearButton();
+		registerForContextMenu(myList);
+        listviewItemClick();
 		openDB ();
         populate();
-        listviewItemClick();
+
 
 	}
 
+    private void setupClearButton() {
+        Button btnClear= (Button) findViewById(R.id.btnClear);
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor c= base.getAllRows();
+                if (c.moveToNext()) {
+                    base.deleteAll();
+                    populate();
+                    Toast.makeText(Schedule.this, "All schedule cleared!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(Schedule.this, "Schedule is empty!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+
+        if (v.getId()==R.id.listViewFromDB) {
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+            menu.setHeaderTitle("Edit Schedule");
+            String[] menuItems = getResources().getStringArray(R.array.menu);
+            for (int i = 0; i<menuItems.length; i++) {
+                menu.add(Menu.NONE, i, i, menuItems[i]);
+            }
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        int menuItemIndex = item.getItemId();
+        String[] menuItems = getResources().getStringArray(R.array.menu);
+
+        switch(menuItemIndex) {
+            case 0:
+                startActivityForResult(new Intent(getApplicationContext(), Edit_Schedule.class), 1);
+                break;
+            case 1:
+                deleteSchedule(idd);
+                populate();
+                break;
+
+        }
+
+        return true;
+    }
 
 
     @Override
@@ -79,6 +128,21 @@ public class Schedule extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            first= data.getStringExtra("fname");
+            last= data.getStringExtra("lname");
+            sday= data.getStringExtra("day");
+            stime= data.getStringExtra("time");
+            entry= true;
+            date= true;
+            updateSchedule(idd);
+            populate();
+        }
+    }
+
     private void populate() {
     Cursor cursor= base.getAllRows();
 
@@ -101,91 +165,43 @@ public class Schedule extends Activity {
         myList.setAdapter(myCursorAdapter);
     }
 
-    private boolean validateDate () { // check if the time slot is occupied by another student.
-        boolean check= true;
-        Cursor cursor= base.getAllRows();
-        String day= sday.getSelectedItem().toString();
-        String time= stime.getSelectedItem().toString();
-        if (cursor.moveToFirst()) { // check = false if selected time slot is occupied.
-            do {
-                if (day.equals(cursor.getString(BOOKINGDB.COL_DAY)) && time.equals(cursor.getString(BOOKINGDB.COL_TIME))){
-                    check=false;
-                    return check;
-                }
 
-            } while (cursor.moveToNext());
-        }
-        return check;
-    }
-
-    private boolean validateEntry() {
-        Integer fname= first.getText().toString().trim().length(); // length of first name
-        Integer lname= last.getText().toString().trim().length(); // length of last name
-        String fnameS= first.getText().toString(); // convert first name into string
-        String lnameS= last.getText().toString(); // convert last name into string
-        Integer f_space= fnameS.indexOf(" "); // check for space in first name
-        Integer l_space= lnameS.indexOf(" "); // check for space in last name
-
-        if (fname <=0) { // did not enter first name
-            Toast.makeText(Schedule.this, "Please enter the first name!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if (lname <=0) { // did not enter last name
-            Toast.makeText(Schedule.this, "Please enter the last name!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if (f_space != -1)	{ // first name contains space
-            Toast.makeText(Schedule.this, "The first name contains space!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        else if (l_space != -1) { // last name  contains space
-            Toast.makeText(Schedule.this, "The last name contains space!", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
-    }
 
     private void updateSchedule(long id) { // update appointment database based on user input.
         Cursor cursor= base.getRow(id);
-        boolean noDupe= validateDate();
-        boolean entry= validateEntry();
-        if (noDupe && entry) { // if user-selected time slot is vacant, then finish editing the schedule.
+
+        if (entry && date) { // if user-selected time slot is vacant, then finish editing the schedule.
             if (cursor.moveToFirst()) {
-                String fname = first.getText().toString();
-                String lname = last.getText().toString();
-                String day = sday.getSelectedItem().toString();
-                String time = stime.getSelectedItem().toString();
-                base.updateRow(id, fname, lname, day, time);
-                Toast.makeText(this,"Edit Successful!",Toast.LENGTH_SHORT).show();
+
+                base.updateRow(id, first, last, sday, stime);
+                Toast.makeText(Schedule.this,"Edit Successful!",Toast.LENGTH_SHORT).show();
             }
             cursor.close();
         }
-        else if (!noDupe && !entry || noDupe && !entry) { // user-selected time slot is occupied and invalid entry.
+        else if (!entry && !date || entry && !date) { // user-selected time slot is occupied and invalid entry.
             return;                                       // or user-selected time slot is vacant and invalid entry.
         }
         else
         {
-            Toast.makeText(this,"This time slot is occupied. Please select another time slot!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Schedule.this,"This time has been booked. Please book another time period!",Toast.LENGTH_SHORT).show();
         }
     }
 
-	private void listviewItemClick() { // when user clicks a schedule in the listview.
+    private void deleteSchedule (long id) {
+        Cursor cursor= base.getRow(id);
+        base.deleteRow(id);
+        Toast.makeText(Schedule.this,"Schedule Successfully Deleted!",Toast.LENGTH_SHORT).show();
+    }
+
+    private void listviewItemClick() { // when user clicks a schedule in the listview.
         myList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                updateSchedule(id);
-                populate();
+                idd= id;
                 return false;
             }
         });
 
-        /*myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                updateSchedule(id); // update the appointments database
-                populate(); // display the modified schedule in the listview.
-            }
-        });*/
     }
 }

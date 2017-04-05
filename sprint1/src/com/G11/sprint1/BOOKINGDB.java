@@ -109,7 +109,22 @@ public class BOOKINGDB {
 		newValues.put(KEY_TIME, time);
 		return db.update(DATABASE_TABLE, newValues, where, null) != 0;
 	}
-	
+
+	public boolean deleteRow(long rowId) {
+		String where = KEY_ROWID + "=" + rowId;
+		return db.delete(DATABASE_TABLE, where, null) != 0;
+	}
+
+	public void deleteAll() {
+		Cursor c = getAllRows ();
+		long rowId = c.getColumnIndexOrThrow(KEY_ROWID);
+		if (c.moveToFirst()) {
+			do {
+				deleteRow(c.getLong((int) rowId));
+			} while (c.moveToNext());
+		}
+		c.close();
+	}
 
 	private static class DatabaseHelper extends SQLiteOpenHelper
 	{

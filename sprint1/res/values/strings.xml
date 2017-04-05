@@ -82,6 +82,10 @@
         <item>14:00-15:00</item>
         <item>15:00-16:00</item>
     </string-array>
+    <string-array name="menu">
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
 
     <string name="enter_feedback">Tell us what you think!</string>
     <string name="no_dfeedback">No Feedback Yet!</string>
@@ -124,5 +128,8 @@
     <string name="day">Day</string>
     <string name="time">Time</string>
     <string name="after_entering_required_info_click_and_hold_on_the_schedule_you_wish_to_edit">After entering required info, click and hold on the schedule you wish to edit.</string>
+    <string name="submit">Submit</string>
+    <string name="click_and_hold_on_the_schedule_you_wish_to_edit_or_delete">Click and hold on the schedule you wish to edit or delete.</string>
+    <string name="clear_all">Clear All</string>
 
 </resources>
