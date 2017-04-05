@@ -3,12 +3,12 @@ package com.G11.sprint1;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
+import android.widget.ImageView;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	Button alog, slog, set;
+	ImageView alog, slog,set;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 	}*/
 
 	public void clickaLog(){
-		alog=(Button)findViewById(R.id.advisorlogin);
+		alog=(ImageView)findViewById(R.id.imageView);
 		alog.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 		});
 	}
 	public void clicksLog(){
-		slog=(Button)findViewById(R.id.studentlogin);
+		slog=(ImageView)findViewById(R.id.imageView2);
 		slog.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

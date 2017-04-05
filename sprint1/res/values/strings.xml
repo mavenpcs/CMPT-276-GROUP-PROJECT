@@ -131,5 +131,7 @@
     <string name="submit">Submit</string>
     <string name="click_and_hold_on_the_schedule_you_wish_to_edit_or_delete">Click and hold on the schedule you wish to edit or delete.</string>
     <string name="clear_all">Clear All</string>
+    <string name="advisor_main">Advisor</string>
+    <string name="student_main">Student</string>
 
 </resources>

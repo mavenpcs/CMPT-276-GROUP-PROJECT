@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,19 +6,40 @@
     android:padding="10dp"
     android:background="@drawable/background">
 
-    <Button
-        android:id="@+id/advisorlogin"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:src="@drawable/advisor_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="43dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/advisor_main"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/custombutton"
-        android:text="@string/advisor" />
+        android:id="@+id/textView23"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/studentlogin"
-        android:layout_width="match_parent"
+    <TextView
+        android:text="@string/student_main"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/custombutton"
-        android:text="@string/student" />
+        android:id="@+id/textView24"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignEnd="@+id/textView23" />
 
-
-</LinearLayout>
+    <ImageView
+        android:src="@drawable/student_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/textView23"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="28dp" />
+</RelativeLayout>
