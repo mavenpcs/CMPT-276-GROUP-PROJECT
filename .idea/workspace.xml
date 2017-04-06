@@ -10,12 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e0b3bb1-02dd-4386-8392-c2b11c526ed1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sprint1/res/drawable-hdpi/schedule_border.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sprint1/res/values/colors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml" afterPath="$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint1/res/layout/activity_edit_schedule.xml" afterPath="$PROJECT_DIR$/sprint1/res/layout/activity_edit_schedule.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint1/res/layout/activity_schedule.xml" afterPath="$PROJECT_DIR$/sprint1/res/layout/activity_schedule.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprint1/src/com/G11/sprint1/Schedule.java" afterPath="$PROJECT_DIR$/sprint1/src/com/G11/sprint1/Schedule.java" />
     </list>
     <ignored path="group11.iws" />
@@ -80,8 +77,8 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="55" />
+            <state relative-caret-position="75">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -100,8 +97,8 @@
       <file leaf-file-name="edit_schedule_border.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,8 +124,8 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sprint1/src/com/G11/sprint1/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            <state relative-caret-position="135">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -199,8 +196,8 @@
         <option value="$PROJECT_DIR$/sprint1/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/sprint1/res/layout/activity_schedule.xml" />
         <option value="$PROJECT_DIR$/sprint1/res/drawable-hdpi/border.xml" />
-        <option value="$PROJECT_DIR$/sprint1/res/layout/activity_edit_schedule.xml" />
         <option value="$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml" />
+        <option value="$PROJECT_DIR$/sprint1/res/layout/activity_edit_schedule.xml" />
         <option value="$PROJECT_DIR$/sprint1/src/com/G11/sprint1/Schedule.java" />
       </list>
     </option>
@@ -676,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491392094045</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Schedule Activity: &#10;1. Now clears all schedules when there is only 1 schedule in the database.&#10;">
+      <created>1491436753440</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491436753440</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -694,7 +698,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37723577" sideWeight="0.4273021" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37723577" sideWeight="0.4273021" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -770,7 +774,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Schedule Activity: Implemented the edit method.&#10;schedule_layout.xml: changed from RelativeLayout to LinearLayout." />
     <MESSAGE value="Schedule Activity: &#10;1. Changes to edit functionality. (Used popup window)&#10;2. Added Delete &amp; Clear All functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Schedule Activity: &#10;1. Changes to edit functionality. (Used popup window)&#10;2. Added Delete &amp; Clear All functionality" />
+    <MESSAGE value="Schedule Activity: &#10;1. Now clears all schedules when there is only 1 schedule in the database.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schedule Activity: &#10;1. Now clears all schedules when there is only 1 schedule in the database.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1193,18 +1198,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sprint1/res/drawable-hdpi/schedule_border.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprint1/res/drawable-hdpi/edit_schedule_border.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1214,16 +1219,16 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="75">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sprint1/src/com/G11/sprint1/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        <state relative-caret-position="135">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding />
         </state>
       </provider>

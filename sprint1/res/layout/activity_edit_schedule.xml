@@ -3,16 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/edit_schedule_border"
+    android:adjustViewBounds="true"
     android:id="@+id/layoutEdit2">
-
-    <TextView
-        android:text="@string/edit_schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/txtEditSchedule"
-        android:textSize="18sp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -68,5 +60,15 @@
         android:layout_below="@+id/spinTime2"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custombutton"/>
+
+    <TextView
+        android:text="@string/edit_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEditSchedule"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp" />
 
 </RelativeLayout>
